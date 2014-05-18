@@ -34,6 +34,8 @@ class ProductsController < ApplicationController
 
     def find_product
       @product = Product.where(id: params[:id]).first
-      render_404 unless @product 
+      unless @product
+        render :text => "Page not found", :status => 404
+      end
     end
 end
