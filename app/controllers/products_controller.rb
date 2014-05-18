@@ -1,21 +1,28 @@
 class ProductsController < ApplicationController
   before_filter :find_product, only: [:show]
+
   def index
     @products = Product.all
   end
+
   def create
   end
+
   def update
   end
+
   def destroy
     @product.destroy
     redirect_to action: "index"
   end
+
   def show
     @product = Product.find(params[:id])
   end
+
   def new
   end
+  
   def edit
   end
   

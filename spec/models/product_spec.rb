@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Product do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "Do something" do
+    expect(2+2).to eq(4)
+  end
+
 end
