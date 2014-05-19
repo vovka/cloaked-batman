@@ -1,0 +1,24 @@
+<h1>All products from database</h1>
+
+<% if @products.empty? %>
+<b>Products not found</b>
+<% else %>
+
+<table>
+  <tr>
+    <th>Id:</th>
+    <th>Name:</th>
+    <th>Price:</th>
+    <th></th>
+  </tr>
+  <% @products.each do |p|  %>
+  <tr>
+    <td><%= p.id %></td>
+    <td><%= link_to("#{p.name}", { :action => 'show', :id => p.id }) %></td>
+    <td><%= p.price %></td>
+    <td><%= link_to "Delete", p, method: :delete, data: { confirm: "Delete? Are you shure? " } %></td>
+  </tr>
+  <% end %>
+</table>
+
+<% end %>

@@ -1,0 +1,288 @@
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<div class="modal-fixed">
+      <span class="modal-head">
+        <p>Надіслати повідомлення</p><span class="vertical-line"></span>
+        <button type="button" class="close" aria-hidden="true">&times;</button>
+      </span>
+      <div class="modal-body">
+        <p class="text-muted">Ми не в мережі. Будь ласка, залиште свої контакти і ваше питання, ми з вами зв'яжемося!</p>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input type="email" class="form-control" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Phone">
+            </div>
+          </div>
+        </form>
+
+      </div >
+      
+    </div>
+    <ul id="nav_fixed">
+      <li class="inform">
+        <a href="#">Інформація</a>
+        <a href="#">Купівля</a>
+        <a href="#">Про нас</a>
+        <a href="#">Вакансії</a>
+      </li>
+      <li class="link">
+        <a href>some other info</a>
+        <a href>some other info</a>
+        <a href>some other info</a>
+        <a href>some other info</a>
+    </li>
+    </ul>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <header>
+            <span class="pull-right reg-bl"><a href="#">Вхід</a>&nbsp;\&nbsp;<a href="#">Реєстрація</a></span>
+          </header>
+        </div>
+      </div>
+      
+       <ol class="breadcrumb">
+         <li><a href="#">Магазин </a></li>
+         <li><%= @product.name %></li>
+       </ol>
+    </div>
+        <!-- TOP CONTENT WITH BIG IMAGE AND SOME INFORM. -->
+    <div class="container">
+      <div class="row top-content">
+        <!-- First block -->
+        <div class="col-sm-5 col-md-4 col-lg-4">
+         <div class="thumbnail">
+           <img id="photo_large" src="http://gamershop.com.ua/images/product/steelseries-kinzu-optical-mouse-03.jpg" alt="some text" />
+
+        <!--    <div class="caption">
+
+            <a href="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-03.jpg" class="thumbnail">
+             <img alt="#" class="gallery" src="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-03.jpg" />
+            </a>
+
+            <a href="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-05.jpg" class="thumbnail">
+             <img alt="#" class="gallery" src="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-05.jpg" />
+            </a>
+
+            <a href="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-07.jpg" class="thumbnail">
+             <img alt="#" class="gallery" src="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-07.jpg" />
+            </a>
+
+            <a href="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-09.jpg" class="thumbnail">
+             <img alt="#" class="gallery" src="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-09.jpg" />
+            </a>
+
+            <a href="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-13.jpg" class="thumbnail">
+             <img alt="#" class="gallery" src="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-13.jpg" />
+            </a>
+
+            <a href="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-15.jpg" class="thumbnail">
+             <img alt="#" class="gallery" src="imgs/goods/mouse1/steelseries-kinzu-optical-mouse-15.jpg" />
+            </a>
+           </div> -->
+         </div>
+        </div>
+        <!-- Second block -->
+        <div class="col-sm-7 col-md-4 col-lg-4">
+          <h4><%= @product.name %></h4>
+          <small class="text-muted">Код товару: (<%= @product.id %>)</small>
+            <div id="price" class="row">
+              <div class="col-sm-7 col-md-7 col-lg-7">
+                <p>
+                  <span class="price"><%= @product.price %></span>&nbsp;грн.<br/>
+                  <a class="small-text" href="#priceReduction" data-toggle="modal">Дізнатись про зниження ціни</a>
+                </p>
+                <img src="imgs/star-rating.png" width="160" height="25" alt="">
+                <!--Modal -->
+                <div class="modal fade" id="priceReduction" tabIndex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                    <!--  <div class="modal-header">
+                      </div> -->
+                      <div class="modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4>Дізнатись про зниження ціни</h4>
+                        <p>Електронна пошта&nbsp;<span class="red-text">*</span></p>
+                        <form action="index.php" method="get">
+                          <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Введіть email">
+                            <span class="input-group-btn">
+                              <button class="btn btn-danger" type="button">OK</button>
+                            </span>
+                          </div><!-- /input-group -->
+                        </form>
+                      </div>
+                      <!--div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                      </div-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-5 col-md-5 col-lg-5">
+                <%if @product.availability %>
+                  <span class="not-empty small-text center-block">&#10004;&nbsp;Товар є в наявності </span>
+                <%else%>
+                  <span class="not-empty small-text center-block">&#10004;&nbsp;Товар відсутній </span>
+                <%end%>
+                <span id="myToolTip" data-placement="top" data-toggle="tooltip" title="Курєрська доставка"  class="small-text pull-left">Термін доставки 1-2 дня&nbsp;<i class="fa fa-truck"></i></span></br>
+
+                <button type="button" class="btn btn-danger btn-buy">Купити</button>
+
+                <button id="myPopover" data-toggle="popover" data-placement="bottom" title="Contact with us" data-content="The form with phone will be here..." type="button" class="btn btn-danger ">Купити за 1 клік</button>
+              </div>
+            </div>
+        </div>
+          <!-- Third block -->
+        <div class="col-md-4 col-lg-4 inform-block">
+          <div class="well well-sm">
+            <%= @product.side_description %>
+          </div>
+
+          <div class="panel-group" id="accordion">
+
+            <div class="panel">
+              <div class="panel-heading">
+                <h4 class="panel-title"><a href="#section1" data-toggle="collapse" data-parent="#accordion">Доставка</a></h4>
+              </div>
+              <div class="panel-collapse collapse in" id="section1">
+                <div class="panel-body">
+                  <h4>Доставка товара:</h4>
+
+                  <small class="text-muted">Доставка по Киеву - 35 грн.</br>
+                  Доставка по Украине службами перевозок (Новая Почта, Ночной Экспресс, Интайм) - до 38 грн.</br>
+                  Самовывоз заказов производится только по предварительному заказу</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel ">
+              <div class="panel-heading">
+                <h4 class="panel-title"><a href="#section2" data-toggle="collapse" data-parent="#accordion">Гарантія</a></h4>
+              </div>
+              <div class="panel-collapse collapse" id="section2">
+                <div class="panel-body">
+                  <h4>Гарантия:</h4>
+
+                  <small class="text-muted">Товар сертифицирован
+                  Гарантия от производителя</br>
+                  Обмен или возврат товара в течение 14 дней, согласно закона «О защите прав потребителей»</small>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 col-sm-12">
+          <!--NAVIGATION TABS
+          =======================-->
+          <ul class="nav nav-tabs ">
+            <li class="active"><a href="#tab1" data-toggle="tab">Опис</a></li>
+            <li><a href="#tab2" data-toggle="tab">Характеристики</a></li>
+            <li>
+              <a href="#tab3" data-toggle="tab">Відгуки&nbsp; <span class="badge">42</span></a>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+              <p><strong><%= @product.name %></strong><%= @product.description %></p>
+            </div>
+            <div class="tab-pane" id="tab2">
+              <table class="table table-condensed">
+                <tr>
+                  <td>Производитель</td>
+                  
+                </tr> 
+                <tr>
+                  <td>Тип сенсора</td>
+                  
+                </tr>
+                <tr>
+                  <td>Тип мыши</td>
+                  
+                </tr>
+                  <td>Подсветка</td>
+                  
+                </tr>
+              </table>
+            </div>
+            <div class="tab-pane" id="tab3">
+              This is 3th tab....
+            </div>
+          </div>
+        </div>
+        <!--LOOK ALSO
+          =======================-->
+        <!--div class="col-md-12 col-lg-12 col-sm-12" id="wrap_carousel">
+            <div id="p-prev"></div>
+          <div id="p-next"></div>
+          <div id="content_carousel">
+            
+          <ul id="gallery">
+            <li>
+              <a rel="lightbox-gallery" href="imgs/goods/other/71220_large.jpg"><img src="imgs/goods/other/71220_large.jpg" alt="text" /></a>
+              <a href="#" class="goods-title">SteelSeries Kinzu v2 Orange (62024)</a>
+              <span class="goods-price">330 грн.</span>
+            </li>
+            <li>
+              <a rel="lightbox-gallery" href="imgs/goods/other/gr1kg-2jf95-ljih39-7xf6.jpg"><img src="imgs/goods/other/gr1kg-2jf95-ljih39-7xf6.jpg" alt="" /></a>
+              <a href="#" class="goods-title">A4Tech X7-G700</a>
+              <span class="goods-price">120 грн.</span>
+            </li>
+            <li>
+              <a rel="lightbox-gallery" href="imgs/goods/other/razer_kraken_pro_black_m.jpg"><img src="imgs/goods/other/razer_kraken_pro_black_m.jpg" alt="" /></a>
+              <a href="#" class="goods-title">SteelSeries Kinzu v2 Orange (62024)</a>
+              <span class="goods-price">350 грн.</span>
+            </li>
+            <li>
+              <a rel="lightbox-gallery" href="imgs/goods/other/71220_large.jpg" alt=""><img src="imgs/goods/other/71220_large.jpg" alt="" /></a>
+              <a href="#" class="goods-title">SteelSeries Sensei RAW World of Tanks Edition</a>
+              <span class="goods-price">130 грн.</span>
+            </li>
+            <li>
+              <a rel="lightbox-gallery" href="imgs/goods/other/95425-w800-h600-w-v1382713741192.png" alt=""><img src="imgs/goods/other/95425-w800-h600-w-v1382713741192.png" alt="" /></a>
+              <a href="#" class="goods-title">SteelSeries Sensei RAW World of Tanks Edition</a>
+              <span class="goods-price">890 грн.</span>
+            </li>
+            <li>
+              <a rel="lightbox-gallery" href="imgs/goods/other/mouse-pouch-3.png" alt=""><img src="imgs/goods/other/mouse-pouch-3.png" alt="" /></a>
+              <a href="#" class="goods-title">RAZER MOUSE POUCH</a>
+              <span class="goods-price">220 грн.</span>
+            </li>
+            <li>
+              <a rel="lightbox-gallery" href="imgs/goods/other/u_files_store_1_281973.jpg" alt=""><img src="imgs/goods/other/u_files_store_1_281973.jpg" alt="" /></a>
+              <a href="#" class="goods-title">SteelSeries Sensei RAW Na`Vi Edition</a>
+              <span class="goods-price">130 грн.</span>
+            </li>
+            <li>
+              <a rel="lightbox-gallery" href="imgs/goods/other/mad_catz_rat5_gaming_mouse_red_usb_1.jpg" alt=""><img src="imgs/goods/other/mad_catz_rat5_gaming_mouse_red_usb_1.jpg" alt="" /></a>
+              <a href="#" class="goods-title">MadCatz R.A.T. 5 Gaming Mouse Red</a>
+              <span class="goods-price">930 грн.</span>
+            </li>
+          </ul>
+          
+        </div>
+        </div-->
+        
+      </div>
+       <!-- THIS IS FOOTER SIDE -->
+    </div>
