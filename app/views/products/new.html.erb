@@ -2,8 +2,12 @@
 
 <h1>New product</h1>
 
-<%= form_for(:product, url: {action: 'create'}) do |f| %>
+<%= bootstrap_form_for(@product, layout: :horizontal, :html => {:multipart => true}) do |f| %>
 
   <%= render(:partial => 'products/form', :locals => {:f => f}) %>
- <%= submit_tag("Add new product") %>
+
+<%= f.form_group do %>
+ <%= f.submit "Add new product", class: "btn btn-success" %>
  <% end %>
+ <% end %>
+

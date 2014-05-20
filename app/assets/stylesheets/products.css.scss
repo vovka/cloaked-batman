@@ -3,7 +3,7 @@ body{
 }
 header{
   height: 100px;
-  background: url(../imgs/logo-eldorado.png);
+  background: url();
   background-repeat: no-repeat;
   background-position: 10px 20px;
   /*outline: 1px solid red;*/
@@ -93,10 +93,10 @@ header{
 }
 
 .inform a:first-child::before {
-    background:url(../imgs/help-32.png) center no-repeat;
+    background:url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/help.png?itok=LLCXh8Cx) center no-repeat;
 }
 .link a:first-child::before {
-    background:url(../imgs/info-2-32.png) center no-repeat;
+    background:url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/info.png?itok=cZOI2e9i) center no-repeat;
 }
 
 @media only screen and (max-width: 950px){
@@ -183,7 +183,7 @@ a[href="#priceReduction"]:hover{
   content: '';
   display: block;
   position: absolute;
-  background: url(../imgs/basket-inv.png) no-repeat;
+  background: url(http://www.defaulticon.com/v1/assets/icons/png/16x16/basket-inv.png) no-repeat;
   width: 16px;
   height: 16px;
   left: 10px;
@@ -255,7 +255,7 @@ a[href="#priceReduction"]:hover{
   top: 14px;
   left: 10px;
   content: '';
-  background: url(../imgs/mail-inv.png) no-repeat;
+  background: url(http://www.defaulticon.com/v1/assets/icons/png/16x16/mail.png) no-repeat;
 }
 .modal-head button{
   position: absolute;
@@ -376,4 +376,11 @@ footer{
   line-height: 30px;
   border-radius: 5px 5px 0 0;
   font-size: .8em;
+}
+
+.editImage{
+  width: 300px;
+  height: 100px;
+  margin-left: 400px;
+  margin-bottom: 30px;
 }

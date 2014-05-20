@@ -62,7 +62,8 @@
         <!-- First block -->
         <div class="col-sm-5 col-md-4 col-lg-4">
          <div class="thumbnail">
-           <img id="photo_large" src="http://gamershop.com.ua/images/product/steelseries-kinzu-optical-mouse-03.jpg" alt="some text" />
+          <%= image_tag(@product.image_url, :id => 'photo_large') %>
+           <!-- <img id="photo_large" src="http://gamershop.com.ua/images/product/steelseries-kinzu-optical-mouse-03.jpg" alt="some text" /> -->
 
         <!--    <div class="caption">
 
@@ -102,7 +103,7 @@
                   <span class="price"><%= @product.price %></span>&nbsp;грн.<br/>
                   <a class="small-text" href="#priceReduction" data-toggle="modal">Дізнатись про зниження ціни</a>
                 </p>
-                <img src="imgs/star-rating.png" width="160" height="25" alt="">
+                <img src="http://common-lisp.net/project/adw-charting/star-rating.png" width="160" height="25" alt="">
                 <!--Modal -->
                 <div class="modal fade" id="priceReduction" tabIndex="-1" role="dialog" aria-hidden="true">
                   <div class="modal-dialog">
