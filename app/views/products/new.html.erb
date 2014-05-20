@@ -1,0 +1,9 @@
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<h1>New product</h1>
+
+<%= form_for(:product, url: {action: 'create'}) do |f| %>
+
+  <%= render(:partial => 'products/form', :locals => {:f => f}) %>
+ <%= submit_tag("Add new product") %>
+ <% end %>
