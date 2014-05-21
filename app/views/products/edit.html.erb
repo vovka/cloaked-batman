@@ -1,0 +1,13 @@
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<h1>Edit product</h1>
+
+<%= bootstrap_form_for(@product, layout: :horizontal) do |f| %>
+<%= image_tag(@product.image_url, :class => 'editImage') if @product.image? %>
+<%= render(:partial => 'products/form', :locals => {:f => f}) %>
+
+<%= f.form_group do %>
+ <%= f.submit "Save changes", class: "btn btn-success" %>
+ <% end %>
+ <% end %>
+

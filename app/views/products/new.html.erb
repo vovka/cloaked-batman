@@ -1,0 +1,13 @@
+<%= link_to("<< Back to List", {:action => 'index'}) %>
+
+<h1>New product</h1>
+
+<%= bootstrap_form_for(@product, layout: :horizontal, :html => {:multipart => true}) do |f| %>
+
+  <%= render(:partial => 'products/form', :locals => {:f => f}) %>
+
+<%= f.form_group do %>
+ <%= f.submit "Add new product", class: "btn btn-success" %>
+ <% end %>
+ <% end %>
+
