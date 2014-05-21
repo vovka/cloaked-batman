@@ -14,6 +14,12 @@ gem 'bootstrap_form'
 
 gem 'carrierwave'
 
+# Use 'devise' for authetication
+gem 'devise'
+
+# Use 'cancan' for authorization
+gem 'cancan'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
