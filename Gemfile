@@ -12,6 +12,9 @@ gem 'bootstrap-sass'
 gem 'bootstrap_form'
 
 
+gem 'underscore-rails'
+gem 'gmaps4rails'
+
 gem 'carrierwave'
 
 # Use 'devise' for authetication
