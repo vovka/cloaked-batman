@@ -1,5 +1,7 @@
 CloakedBatman::Application.routes.draw do
   
+  resources :stores
+
   devise_for :users
   get 'persons/profile'
 
