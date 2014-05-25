@@ -5,6 +5,8 @@ CloakedBatman::Application.routes.draw do
 
   get 'map/index' => 'map#index'
 
+  post 'map/create_shape' => 'map#create_shape'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :products 
