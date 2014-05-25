@@ -1,0 +1,48 @@
+<div class="container">
+
+  <header id="header">
+    <div class="row">
+      <div class="col-xs-12">
+
+          <div id="tagline">
+          <h1>~купи<span> in.ua</span>~</h1>
+        <div class="searching">
+          <input type="text" placeholder="Що шукаємо..?" size="50">
+          <input type="text" placeholder="Де шукаємо..?" size="50">
+        </div>
+          <div id="map"></div>
+        </div><!-- end of tagline section -->
+      </div><!--end of col-12 div-->
+    </div> <!--end of row-->
+  </header> <!--end of id="header"-->
+
+  	<section id="search-result" class="col-md-12">
+  		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+					<h2>Знайдено магазини:</h2>
+			</div>
+		</div>
+  	</section>
+  	<section id="search-result" class="col-md-12">
+  		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+					<h2>Знайдено продукції:</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<% @product.each do |item| %>
+					<div class="col-xs-2">
+						<div class="result-item">
+							<%= image_tag(item.image_url, class: 'img-circle') %>
+							<div class="searchpage-products">
+								<h4><%= item.name %></h4>
+								<span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+  	</section>
+</div> <!--end of row-->

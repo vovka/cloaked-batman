@@ -1,0 +1,224 @@
+body{
+	font-family: Roboto, arial, sans-serif;
+	font-weight: 100 !important;
+	margin: 2em 0 10em;
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.clear{
+	clear: both;
+}
+.hidden{
+	display: none;
+}
+a{
+	text-decoration: none !important;
+}
+/* ------------------------------- header styling ------------------------*/
+
+#header{
+ margin-top: 10px;
+}
+/* ----------------------- lang-section styling -----------------*/
+
+.lang-section ul{
+	/*margin-top: 10px;*/
+}
+.lang-section ul li{
+	list-style-type: none;
+	float: left;
+	margin: 0 12px 0 0px;
+	padding: 0 0 2px;
+}
+.lang-section ul li a{
+	color: #2ecc71 ;
+	font-size: 1.2em;
+	transition: 0.5s;
+}
+.lang-section ul li.active{
+	border-bottom: 1px solid #27ae60;
+	
+}
+.lang-section ul li.active a{
+	color: #03A65A !important;	
+}
+/* end of lang-section styling */
+
+/* ----------------------- sign-in-section styling -----------------*/
+
+.sign-in-section ul{
+	/*margin-top: 10px;*/
+}
+.sign-in-section ul li{
+	list-style-type: none;
+	float: left;
+	margin: 0 5px 0 0px;
+	padding: 0 0 2px;
+}
+.sign-in-section ul li a,.sign-in-section ul li span{
+	color: #bdc3c7;
+	font-size: 1.25em;
+	padding: 0;
+	transition: 0.2s;
+}
+.sign-in-section ul li a:hover{
+	color: #7f8c8d;	
+	border-bottom: 1px solid #7f8c8d;
+}
+/* end of sign-in-section styling */
+
+/* end of header styling */
+/* -------------------------------- tagline section styling -------------------------- */
+#tagline{
+	margin: 8em 0 4em; 
+}
+#tagline h1{
+	text-transform: uppercase;
+	color: #27ae60;
+	font-size: 7.5em !important;
+	font-style: italic;
+	font-weight: 400 !important;
+	text-align: center;
+	transition: 0.9s;
+}
+#tagline > h1:hover{
+	/*color: #f1c40f;*/
+	text-shadow: 2px 2px 10px rgba(143, 143, 143, 0.7);
+}
+#tagline h1 span{
+	font-style: normal;
+	font-size: 70%;
+	text-transform: none;
+	font-weight: 100 !important;
+}
+/* end of  tagline section styling */
+
+/* -------------------------------- search section styling -------------------------- */
+#search{
+	position: relative;
+	height: auto;
+}
+.nav-tabs.nav-justified li.active a{
+	color: #e67e22;
+	font-weight: 400;
+}
+
+.nav-tabs.nav-justified > li > a{
+	font-size: 1.5em;
+	color: #bdc3c7;
+}
+
+.searching{
+	margin: 0 auto;
+	text-align: center; 
+	display: block;
+	font-size: 1.3em;
+}
+.searching input{
+	margin: 1.5em 0 0;
+	border: 1px solid #9b59b6;
+	padding: 5px;
+}
+.searching input:active{
+	box-shadow: 2px 2px 10px rgba(143, 143, 143, 0.7);
+}
+.searching input:nth-child(2){
+	border: 1px solid #f1c40f;
+}
+#tab2{
+	margin-top: -6em;
+	width: 100%;
+}
+#tab2 img{
+	width: 180%;
+	height: auto;
+	margin-left: -35%;
+}
+div.menu-main {
+	margin: 0 auto;
+	height: 30px;
+	margin-top: -60px;
+	margin-bottom: 20px;
+}
+div.menu-main div {
+	text-align: center;
+	font-size: 1.5em;
+}
+/* end of search styling */
+
+/* -------------------------------- search-result section styling -------------------------- */
+#search-result{
+	padding-bottom: 3em;
+	border-bottom: 2px dashed #ddd;
+	margin-bottom: 3.5em;
+	/*margin-top: 1em*/
+}
+#search-result h2{
+	text-align: center;
+	margin: 1em 0 1em;
+	color: #e67e22;
+	font-weight: 100;
+	font-size: 3em;
+}
+#search-result .result{
+	padding: 2.5em 0 1em;
+}
+#search-result img{
+	padding: 3px;
+	border: 1px solid #bdc3c7;
+	transition: 0.2s;
+	width: 100%;
+	height: auto;
+}
+#search-result img:hover{
+	border: 1px solid #e67e22;
+	-webkit-transform: scale(1.18);
+	-moz-transform: scale(1.18);
+	-o-transform: scale(1.18);
+	transform: scale(1.18);
+}
+/* search-result */
+
+.result-item{
+	margin: 0 0 15px 0;
+}
+.result-item a p{
+	text-align: center;
+	z-index: 999999;
+	padding-top: 10px;
+}
+.wrapper{
+	/*width: 80%;
+	padding: 3%;*/
+	margin: 0 auto;
+	background-color: #fff;
+}
+/*body{
+	background-color: #ddd;
+}*/
+td{
+	padding: 5px;
+	border: 1px solid #ddd; 
+}
+.image{
+	width: 25%;
+	height: auto;
+	float: right;
+	border: 1px solid #ddd;
+	border-radius: 50%; 
+	margin-top: -5%;
+}
+.image-td{
+	width: 60px;
+	height: auto;
+	/*border: 1px solid #ddd;*/
+	border-radius: 50%; 
+}
+.searchpage-products{
+	border-left: 1px solid #2ecc71;
+	padding-left: 15px;
+}

@@ -10,19 +10,35 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<% if user_signed_in? %>	
-		<span> Здравствуйте,<%= current_user.email %></span>
-		<%= link_to 'Выйти', destroy_user_session_path, :method =>	:delete %>
-	<% else %>	
-		<%= link_to 'Войти', new_user_session_path %>	
-		или
-		<%= link_to 'Зарегистрироваться', new_user_registration_path %>	
-	<% end %>	
+  <div class="wrapper">
 
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+	   <% if user_signed_in? %>	
+		      <span> Вітаємо,<%= current_user.email %></span>
+		        <%= link_to 'Вийти', destroy_user_session_path, :method =>	:delete %>
+	     <% else %>	
+		    <%= link_to 'Увійти', new_user_session_path %>	
+		/
+		    <%= link_to 'Реєстрація', new_user_registration_path %>	
+	     <% end %>	
 
-<%= yield %>
-
+	     <p class="notice"><%= notice %></p>
+	     <p class="alert"><%= alert %></p>
+    <ul id="nav_fixed">
+      <li class="inform">
+        <a href="#">Інформація</a>
+        <%= link_to "Головна", controller: "main", action: "index" %>
+        <a href="#">Купівля</a>
+        <a href="#">Про нас</a>
+        <a href="#">Вакансії</a>
+      </li>
+      <li class="link">
+        <a href>some other info</a>
+        <%= link_to "+ add product", controller: "products", action: "new" %>
+        <a href>some other info</a>
+        <a href>some other info</a>
+    </li>
+    </ul>
+    <%= yield %>
+  </div>
 </body>
 </html>
