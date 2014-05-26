@@ -3,12 +3,20 @@
   <header id="header">
     <div class="row">
       <div class="col-xs-12">
-
+      
           <div id="tagline">
           <h1>~купи<span> in.ua</span>~</h1>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <div class="col-sm-6 col-sm-offset-3">
+                <input type="email" class="form-control" id="searchFor" placeholder="Що шукаємо..?">
+              </div>
+            </div>
+          </form>
         <div class="searching">
-          <input type="text" placeholder="Що шукаємо..?" size="50">
-          <input type="text" placeholder="Де шукаємо..?" size="50">
+        <button class="search">
+          шукати
+        </button>
         </div>
           <div id="map"></div>
         </div><!-- end of tagline section -->
@@ -31,13 +39,14 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12">
-				<% @product.each do |item| %>
+				<% @products.each do |item| %>
 					<div class="col-xs-2">
 						<div class="result-item">
 							<%= image_tag(item.image_url, class: 'img-circle') %>
 							<div class="searchpage-products">
 								<h4><%= item.name %></h4>
 								<span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
+                <p style="text-align: right; color: #2980b9; font-style: italic"><%= link_to "view", "/products/#{item.id}" %></p>
 							</div>
 						</div>
 					</div>
