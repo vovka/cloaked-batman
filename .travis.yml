@@ -9,4 +9,5 @@ script:
   - bundle exec rspec spec
 before_script:
   - cp config/database.travis.yml config/database.yml
-
+notifications:
+  campfire: home2096.campfirenow.com:c8f4b311476dac25b3cba1ea9241448fdacb0b2c@596765
