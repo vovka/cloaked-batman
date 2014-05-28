@@ -1,15 +1,22 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.body{
+//
+body{
   font-size: 100%;
-  font-familu: Roboto;
+  font-family: Roboto;
+  color: red;
+  background-image: url(subtle_dots_@2X.png) !important;
+
+}
+.wrapper{
+overflow: hidden;
 }
 .searching input{
   display: block;
 }
 .login a, .login{
-  font-size: 120%;
+  font-size: 110%;
   color: #ddd;
   transition: 0.3s; 
   -moz-transition: 0.3s; 
@@ -19,4 +26,55 @@
 .login a:hover{
   color: #e67e22;
   
+}
+#map{
+  margin: 0 auto;
+  margin-top: 4%;
+  z-index: 500;
+}
+.for_gb_color{
+  position: relative;
+  overflow-x: hidden;
+}
+.bg_color{
+  height: 500px;
+  position: absolute;
+  background-color: #27AE60;
+  width: 9999px;
+  margin-top: -450px;
+  margin-left: -1000px;
+  z-index: 10;
+}
+.bg_color::after{
+  content: "";
+  background-image: url(subtle_dots_@2X.png);
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+.search{
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #27AE60;
+  border: none;
+  transition: .4s;
+  margin-top: 2%;
+}
+.search:hover{
+  background-color: #2ecc71;
+  box-shadow: 0px 0px 4px rgba(20, 20, 20, 0.4);
+}
+footer{
+  height: 70px !important;
+  background-color: #34495e !important;
+  border-radius: 0 !important;
+  bottom: 0;
+  width: 100%;
+}
+footer h3{
+  padding-top: 15px;
+  color: #f39c12;
 }

@@ -1,13 +1,49 @@
-<ul id="nav_fixed">
+<header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "КУПИ.in.ua", root_path, class: "navbar-brand" %>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to "Магазини" %>
+        </li>
+        <li class="active">
+          <%= link_to "Магазини", products_path  %>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li >
+          <a href="#">Customize</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<!-- <ul id="nav_fixed">
       <li class="inform">
         <a href="#">Інформація</a>
-        <%= link_to "Головна", controller: "main", action: "index" %>
+        <%= link_to "Головна", root_path %>
         <a href="#">Купівля</a>
         <a href="#">Про нас</a>
         <a href="#">Вакансії</a>
       </li>
       <li class="link">
         <a href>some other info</a>
-        <%= link_to "+ add product", controller: "products", action: "new" %>
+       
     </li>
-</ul>
+</ul> -->
