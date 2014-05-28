@@ -37,11 +37,11 @@ overflow: hidden;
   overflow-x: hidden;
 }
 .bg_color{
-  height: 500px;
+  height: 400px;
   position: absolute;
   background-color: #27AE60;
   width: 9999px;
-  margin-top: -450px;
+  margin-top: -400px;
   margin-left: -1000px;
   z-index: 10;
 }
