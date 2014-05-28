@@ -4,7 +4,7 @@ describe "stores/show" do
   before(:each) do
     @store = assign(:store, stub_model(Store,
       :name => "Name",
-      :description => "Description",
+#      :description => "Description",
       :adress => "Adress",
       :telephone => "Telephone",
       :mail => "Mail",
@@ -16,7 +16,7 @@ describe "stores/show" do
   it "renders attributes in <p>" do
     render
     expect(rendered).to match(/Name/)
-    expect(rendered).to match(/Description/)
+#    expect(rendered).to match(/Description/)
     expect(rendered).to match(/Adress/)
     expect(rendered).to match(/Telephone/)
     expect(rendered).to match(/Mail/)
