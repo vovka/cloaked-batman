@@ -1,0 +1,39 @@
+<div class="container">
+<h1>All stores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    <!--  <th>Description</th> -->
+      <th>Adress</th>
+      <th>Telephone</th>
+      <th>Mail</th>
+      <th>Person</th>
+      <th>Map</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <td><%= store.name %></td>
+       <!-- <td><%= store.description %></td> -->
+        <td><%= store.adress %></td>
+        <td><%= store.telephone %></td>
+        <td><%= store.mail %></td>
+        <td><%= store.contact_person %></td>
+        <td><%= store.map_id %></td>
+        <td><%= link_to 'Show Store', store %></td>
+        <td><%= link_to 'Edit Store', edit_store_path(store) %></td>
+        <td><%= link_to 'Delete Store', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Create Store', new_store_path %>
+</div>

@@ -1,5 +1,5 @@
 CloakedBatman::Application.routes.draw do
-  
+  resources :stores
   get 'main/index'
 
   devise_for :users

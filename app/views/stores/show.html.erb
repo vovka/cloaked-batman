@@ -1,0 +1,62 @@
+<div class="container">
+  <header id="header">
+    <div class="row">
+
+      <div class="sign-in-section right">
+        <ul>
+          <li>
+            <a href="#">Увійти</a>
+          </li>
+          <li>
+            <span>/</span>
+          </li>
+          <li>
+            <a href="#">Реєстрація</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- end of header section -->
+  <div id="tagline">
+    <h1>
+      ~ купи
+      <span>in.ua</span>
+      ~
+    </h1>
+  </div>
+  <!-- end of tagline section -->
+
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+      <h1><%= @store.name %></h1>
+      <div id="store-logo"><p>Store Logo</p></div>
+      <p id="description"><%= @store.description %></p>
+      <h3>Our products</h3>
+      <div class="row products">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">Product 1</div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">Product 2</div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">Product 3</div>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+      <div id="contacts"><h3>Contacts</h3></div>
+      <div id="map"><p>Our Map</p></div>
+      <div id="contact-block">
+        <p><strong>Adress: </strong><%= @store.adress %></p>
+        <p><strong>Tel.: </strong><%= @store.telephone %></p>
+        <p><strong>Mail: </strong><%= @store.mail %></p>
+        <p><strong>Contact person: </strong><%= @store.contact_person %></p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+<!--<%= link_to 'Edit', edit_store_path(@store) %> |-->
+<%= link_to 'Back', stores_path %>
+
+</div>
