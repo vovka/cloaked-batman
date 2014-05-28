@@ -1,0 +1,57 @@
+<div class="container">
+
+  <header id="header">
+    <div class="row">
+      <div class="col-xs-12">
+      
+          <div id="tagline">
+          <h1>~купи<span> in.ua</span>~</h1>
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <div class="col-sm-6 col-sm-offset-3">
+                <input type="email" class="form-control" id="searchFor" placeholder="Що шукаємо..?">
+              </div>
+            </div>
+          </form>
+        <div class="searching">
+        <button class="search">
+          шукати
+        </button>
+        </div>
+          <div id="map"></div>
+        </div><!-- end of tagline section -->
+      </div><!--end of col-12 div-->
+    </div> <!--end of row-->
+  </header> <!--end of id="header"-->
+
+  	<section id="search-result" class="col-md-12">
+  		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+					<h2>Знайдено магазини:</h2>
+			</div>
+		</div>
+  	</section>
+  	<section id="search-result" class="col-md-12">
+  		<div class="row">
+			<div class="col-xs-8 col-xs-offset-2">
+					<h2>Знайдено продукції:</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<% @products.each do |item| %>
+					<div class="col-xs-2">
+						<div class="result-item">
+							<%= image_tag(item.image_url, class: 'img-circle') %>
+							<div class="searchpage-products">
+								<h4><%= item.name %></h4>
+								<span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
+                <p style="text-align: right; color: #2980b9; font-style: italic"><%= link_to "view", "/products/#{item.id}" %></p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+  	</section>
+</div> <!--end of row-->
