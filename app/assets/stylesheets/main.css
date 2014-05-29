@@ -4,7 +4,7 @@
 //
 body{
   font-size: 100%;
-  font-family: Roboto;
+  font-family: Roboto !important;
   color: red;
   background-image: url(subtle_dots_@2X.png) !important;
 
@@ -23,13 +23,17 @@ overflow: hidden;
   -o-transition: 0.3s; 
   -webkit-transition: 0.3s; 
 }
+.login_form{
+  margin-top: -34px;
+}
 .login a:hover{
   color: #e67e22;
   
 }
 #map{
   margin: 0 auto;
-  margin-top: 4%;
+  margin-top: 8%;
+
   z-index: 500;
 }
 .for_gb_color{
@@ -37,18 +41,20 @@ overflow: hidden;
   overflow-x: hidden;
 }
 .bg_color{
-  height: 400px;
+  height: 480px;
   position: absolute;
-  background-color: #27AE60;
-  width: 9999px;
-  margin-top: -400px;
-  margin-left: -1000px;
+  /*background-color: #27AE60;*/
+  width: 100%;
+  margin-top: -440px;
+  /*margin-left: -1000px;*/
   z-index: 10;
+  border: 1px solid #27ae60;
+  
 }
 .bg_color::after{
   content: "";
   background-image: url(subtle_dots_@2X.png);
-  opacity: 0.3;
+  opacity: 0.9;
   top: 0;
   left: 0;
   bottom: 0;
@@ -69,12 +75,14 @@ overflow: hidden;
 }
 footer{
   height: 70px !important;
-  background-color: #34495e !important;
+  background-color: #2980b9 !important;
   border-radius: 0 !important;
   bottom: 0;
   width: 100%;
 }
 footer h3{
-  padding-top: 15px;
-  color: #f39c12;
+  padding-top: 20px;
+  color: #ecf0f1;
+  font-weight: 100;
+  letter-spacing: 1px;
 }

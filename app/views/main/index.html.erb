@@ -3,12 +3,14 @@
   <header id="header">
     <div class="row">
       <div class="col-xs-12">
-      
+          <div class="logo">
+          <%= image_tag("logo.png", :alt => "rss feed") %>
+          </div>
           <div id="tagline">
             <h1>~купи<span> in.ua</span>~</h1>
             <form class="form-horizontal" role="form">
               <div class="form-group">
-                <div class="col-sm-6 col-sm-offset-3">
+                <div class="col-sm-8 col-sm-offset-2">
                   <input type="email" class="form-control" id="searchFor" placeholder="Шукайте, наприклад: кросовки Львів..">
                 </div>
               </div>
@@ -35,28 +37,43 @@
 					<h2>Знайдено магазини:</h2>
 			</div>
 		</div>
+    <div class="row">
+        <div class="col-xs-12">
+          <% @stores.each do |store| %>
+            <div class="col-xs-2">
+              <div class="result-item">
+                <div class="searchpage-stores">
+                  <h4><%= store.name %></h4>
+                  <h5><%= store.adress %></h5>
+                  <p><%= link_to "view", "/stores/#{store.id}" %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
   	</section>
   	<section id="search-result" class="col-md-12">
   		<div class="row">
 			<div class="col-xs-8 col-xs-offset-2">
 					<h2>Знайдено продукції:</h2>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-12">
-				<% @products.each do |item| %>
-					<div class="col-xs-2">
-						<div class="result-item">
-							<%= image_tag(item.image_url, class: 'img-circle') %>
-							<div class="searchpage-products">
-								<h4><%= item.name %></h4>
-								<span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
-                <p style="text-align: right; color: #2980b9; font-style: italic"><%= link_to "view", "/products/#{item.id}" %></p>
-							</div>
-						</div>
-					</div>
-				<% end %>
-			</div>
-		</div>
+  		</div>
+  		<div class="row">
+  			<div class="col-xs-12">
+  				<% @products.each do |item| %>
+  					<div class="col-xs-2">
+  						<div class="result-item">
+  							<%= image_tag(item.image_url, class: 'img-circle') %>
+  							<div class="searchpage-products">
+  								<h4><%= item.name %></h4>
+  								<span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
+                  <p><%= link_to "view", "/products/#{item.id}", class: "view-item" %></p>
+  							</div>
+  						</div>
+  					</div>
+  				<% end %>
+  			</div>
+  		</div>
   	</section>
 </div> <!--end of row-->
