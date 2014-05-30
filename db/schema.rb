@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140525125123) do
+ActiveRecord::Schema.define(version: 20140527182017) do
 
   create_table "products", force: true do |t|
     t.integer  "store_id"
     t.string   "name"
     t.float    "price",            limit: 6
     t.text     "side_description"
-    t.text     "image"
     t.text     "description"
     t.boolean  "visible",                    default: true
     t.boolean  "availability",               default: true
@@ -28,6 +27,15 @@ ActiveRecord::Schema.define(version: 20140525125123) do
 
   add_index "products", ["name"], name: "index_products_on_name"
   add_index "products", ["price"], name: "index_products_on_price"
+
+  create_table "shapes", force: true do |t|
+    t.string   "shape_type"
+    t.string   "coordinates"
+    t.string   "image"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "stores", force: true do |t|
     t.string   "name"

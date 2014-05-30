@@ -1,13 +1,13 @@
 CloakedBatman::Application.routes.draw do
-  resources :stores
-  get 'main/index'
+  root to: "main#index"
 
   devise_for :users
   get 'persons/profile'
 
   get 'map/index' => 'map#index'
+  post 'map/create_shape' => 'map#create_shape'
 
-  root to: "main#index"
+  resources :stores
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

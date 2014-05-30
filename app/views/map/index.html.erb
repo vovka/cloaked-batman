@@ -1,10 +1,45 @@
 <h1>Map#index</h1>
 <p>Find me in app/views/map/index.html.erb</p>
 <div>
-  <div id="map"></div>
-  <span id="toggleDrawingControl" class="btn btn-default">On/Off drawing mod</span>
-  <span id="deleteShape" class="btn btn-default">Delete</span>
-  <span id="saveShape" class="btn btn-default">Save</span>
-  <span id="coordinatesShape" class="btn btn-default">Coords</span>
+  <div id="panel">
+    <button id="apply-overlay" class="btn btn-info">Apply overlay</button>
+    <button id="hide-overlay" class="btn btn-warning">Hide overlay</button>
+  </div>
+  <div id="map" style="width:800px; height:400px;"></div>
+  <span id="toggleDrawingControl" class="btn btn-primary">On/Off drawing mod</span>
+  <span id="deleteShape" class="btn btn-danger">Delete</span>
+  <span id="saveShape" class="btn btn-success">Save</span>
+  <a href="#myModal" data-toggle="modal" class="btn btn-default">modal open</a>
+
+  <!--Modal -->
+  <div class="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Modal header</h2>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" method="post" id="map-send-form" role="form" id="map-form" action="map/loca/">
+            <div class="form-group">
+              <label for="describeField" class="col-sm-2 control-label">Опис</label>
+              <div class="col-sm-10">
+                <textarea id="describeField" class="form-control" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputFile">Файл для передачі</label>
+              <input type="file" name="image" id="exampleInputFile">
+              <p class="help-block">Приклад блочного тексту довідки</p>
+             </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" id="sendShape" form="map-send-form" class="btn btn-success">Save norm</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
   <span id="debug"></span>
 </div>
