@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20140527182017) do
 
   create_table "products", force: true do |t|
@@ -34,6 +35,20 @@ ActiveRecord::Schema.define(version: 20140527182017) do
     t.string   "coordinates"
     t.string   "image"
     t.text     "description"
+
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stores", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "adress"
+    t.string   "telephone"
+    t.string   "mail"
+    t.string   "contact_person"
+    t.integer  "map_id"
+
     t.datetime "created_at"
     t.datetime "updated_at"
   end

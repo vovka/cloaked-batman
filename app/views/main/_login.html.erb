@@ -1,0 +1,10 @@
+<div class="login col-xs-2 col-xs-offset-10">
+  <% if user_signed_in? %> 
+    <span> Вітаємо,<%= current_user.email %></span>
+    <%= link_to 'Вийти', destroy_user_session_path, :method =>  :delete %>
+      <% else %> 
+      <%= link_to 'Увійти', new_user_session_path %>  
+      /
+      <%= link_to 'Реєстрація', new_user_registration_path %> 
+  <% end %>  
+</div>
