@@ -6,6 +6,7 @@ CloakedBatman::Application.routes.draw do
 
   get 'map/index' => 'map#index'
   post 'map/create_shape' => 'map#create_shape'
+  post 'map/create_shape_upload' => 'map#create_shape_upload'
 
   resources :stores
 
