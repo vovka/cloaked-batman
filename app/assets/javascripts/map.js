@@ -1,7 +1,8 @@
 var selectedShape, maxZoomService, map, toggleDrawingControl, transitLayer, drawingManager, weatherLayer, cloudLayer, impositionDrawingMapBounds, impositionDrawingMapOverlay;
 var weatherLayerFlag, DrawingControlFlag = false;
 var infoBoxFlag = true;
-var allShapes = new Array();
+var frm = document.forms.fileupload;
+var allShapes, infoWindows = new Array();
 var mapOptions = {
   center: new google.maps.LatLng(49.419517, 26.959320),
   zoom: 16,
@@ -32,9 +33,73 @@ var polyOptions = {
 };
 
 window.onload = function(){
-  document.getElementById('map-send-form').addEventListener('submit',function(evt){
-    evt.preventDefault();
+
+    console.info(infoWindows);
+   document.getElementById('map_image').addEventListener('change', function(evt){
+    var pattern = /\.(jpe?g|png|ico)$/gi;
+    if(evt.target.value.search(pattern) != -1)
+      document.getElementById('send-btn').disabled = false;
+    else{
+      document.getElementById('send-btn').disabled = true;
+      alert("Icorrect file format");
+    }
+   },false);
+
+   document.getElementById('modal-open').addEventListener('click',function(evt){
+    var modalOpenBtn = evt.target;
+    if(selectedShape && selectedShape.type != google.maps.drawing.OverlayType.MARKER){
+      modalOpenBtn.setAttribute('data-toggle', 'modal');
+    }else{
+      alert("Select a shape please.");
+      modalOpenBtn.setAttribute('data-toggle', '');
+      evt.preventDefault();
+    }
+   },false);
+   
+  document.getElementById('fileupload').addEventListener('submit', function(evt){
+    var encodeString, path, boundsObj, sw, ne, shapeToObj, shapeJson, req, inputElement;
+    var rectMassCoordinates = new Array();
+    // evt.preventDefault();
+    if(selectedShape && selectedShape.type != google.maps.drawing.OverlayType.MARKER){
+      switch(selectedShape.type){
+        case "polygon":
+          path = selectedShape.getPath();
+          // console.log(path);
+          encodeString = google.maps.geometry.encoding.encodePath(path);
+          break;
+        case "rectangle":
+          boundsObj = selectedShape.getBounds();
+          // console.log(boundsObj);
+          sw = boundsObj.getSouthWest();
+          ne = boundsObj.getNorthEast();
+          rectMassCoordinates.push(sw);
+          rectMassCoordinates.push(ne);
+          encodeString = google.maps.geometry.encoding.encodePath(rectMassCoordinates);
+          break;
+      }
+      shapeToObj = new ShapeToObj();
+      shapeToObj.shapeType = selectedShape.type;
+      shapeToObj.shapeCoord = encodeString;
+
+      $('#fileupload').fileupload({
+        autoUpload: false,
+        dataType: 'post',
+        imageMaxWidth: 200,
+        imageMaxHeight: 150,
+        maxFileSize: 40000,
+        imageCrop: true, // Force cropped images
+        uploadTemplate: function (o) { },
+        completed: function(e, data) { },
+        downloadTemplate: function (o) { }});
+    }
+    inputElement = document.createElement("input");
+    inputElement.type = "hidden";
+    inputElement.name = "shape";
+    inputElement.value = shapeToObj.shapeType + "||" + shapeToObj.shapeCoord;
+    document.forms.fileupload.appendChild(inputElement);
+
   },false);
+  
 
   var request = new XMLHttpRequest();
   request.onreadystatechange = function(){
@@ -42,12 +107,14 @@ window.onload = function(){
     if (request.readyState != 4) return;
     if (request.status == 200){
       objs = JSON.parse(request.responseText);
+      console.log(objs);
       if (objs.length < 1) return;
       objs.map(function(el){
         decodeString = google.maps.geometry.encoding.decodePath(el.coordinates);
         infoWindowContent = '<h4>Shop name</h4>\
-                                <a href="#">Link to shop</a>\
-                                <small>'+ el.description +'</small>';
+                  <a href="#">Link to shop</a><br>\
+                  <img src="'+el.image.map_image.url+'" alt="some text" /><br>\
+                  <small>'+ el.description +'</small>';
         switch(el.shape_type){
           case 'polygon':
             drawingShape = new google.maps.Polygon();
@@ -65,11 +132,13 @@ window.onload = function(){
           this.infoWindow.setPosition(evt.latLng);
           this.infoWindow.open(map);
         });
+
         google.maps.event.addListener(drawingShape, 'mouseover', function(evt){
           this.setOptions({
             fillOpacity: 0.5
           });
         });
+
         google.maps.event.addListener(drawingShape, 'mouseout', function(evt){
           this.setOptions({
             fillOpacity: 0.3
@@ -130,49 +199,9 @@ window.onload = function(){
   google.maps.event.addDomListener(document.getElementById('deleteShape'), 'click', deleteSelectedShape);
 
   google.maps.event.addListener(map, 'click', function(){
+    closeAllInfowindows();
     clearSelection();
     closeAllInfoboxes();
-  });
-  
-  google.maps.event.addDomListener(document.getElementById('saveShape'), 'click', function(evt){
-    var encodeString, path, boundsObj, sw, ne, shapeToObj, shapeJson, req;
-    var rectMassCoordinates = new Array();
-    if(selectedShape && selectedShape.type != google.maps.drawing.OverlayType.MARKER){
-      switch(selectedShape.type){
-        case "polygon":
-          path = selectedShape.getPath();
-          encodeString = google.maps.geometry.encoding.encodePath(path);
-          break;
-        case "rectangle":
-          boundsObj = selectedShape.getBounds();
-          sw = boundsObj.getSouthWest();
-          ne = boundsObj.getNorthEast();
-          rectMassCoordinates.push(sw);
-          rectMassCoordinates.push(ne);
-          encodeString = google.maps.geometry.encoding.encodePath(rectMassCoordinates);
-          break;
-      }
-      shapeToObj = new ShapeToObj();
-      shapeToObj.shapeType = selectedShape.type;
-      shapeToObj.shapeCoord = encodeString;
-      shapeJson = JSON.stringify(shapeToObj);
-      // console.info(shapeJson);
-      req = new XMLHttpRequest();
-      req.onreadystatechange = function(){
-        if(req.readyState != 4) return;
-        if(req.status == 200){
-          if(req.responseText === 'Success')
-            location.reload(true);
-          else if(req.responseText === 'Error')
-            console.info('Some error in action. Shape is not saved.')
-        }
-      }
-      req.open("POST", "/map/create_shape", true);
-      req.setRequestHeader("Content-Type", "application/json");
-      req.send(shapeJson);
-    }else{
-      alert("Select shape please!");
-    }
   });
 
   loadMapMarkers();
@@ -214,6 +243,7 @@ function attachShapeInfoWindow(shape, html){
   shape.infoWindow = new google.maps.InfoWindow({
     content: html
   });
+  infoWindows.push(shape.infoWindow);
 };
 
 function loadMapMarkers (){
@@ -333,7 +363,10 @@ function smallEventsOut(imgDiv){
   imgDiv.style.cursor = 'default';
   imgDiv.style.paddingTop = '0';
 }
-
+function closeAllInfowindows(){
+  for (var i=0;i<infoWindows.length;i++)
+    infoWindows[i].close();
+}
 function applyOverlay(){
   impositionDrawingMapOverlay.setMap(map);
 }
