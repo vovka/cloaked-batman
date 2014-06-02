@@ -3,8 +3,8 @@
 <% if @products.empty? %>
 <b>Products not found</b>
 <% else %>
-
-<table>
+<div class="col-lg-12">
+<table class="table">
   <tr>
     <th>img:</th>
     <th>Id:</th>
@@ -12,15 +12,18 @@
     <th>Price:</th>
     <th></th>
   </tr>
-  <% @products.each do |p|  %>
+  <% @products.each do |product|  %>
   <tr>
-    <td><%= p.image %></td>
-    <td><%= p.id %></td>
-    <td><%= link_to("#{p.name}", { :action => 'show', :id => p.id }) %></td>
-    <td><%= p.price %></td>
-    <td><%= link_to "Delete", p, method: :delete, data: { confirm: "Delete? Are you shure? " } %></td>
+    <td><%= image_tag ("#{product.image}"), :class => 'img-circle img-thumb' %></td>
+    <td><%= product.id %></td>
+    <td><%= link_to("#{product.name}") %></td>
+    <td><%= product.price %></td>
+    <td><%= link_to "Show", :action => 'show', :id => product.id %></td>
+    <td><%= link_to "Edit", edit_product_path(product.id) %></td>
+    <td><%= link_to "Delete", product, method: :delete, data: { confirm: "Delete? Are you shure? " } %></td>
   </tr>
   <% end %>
 </table>
-
+</div>
+<%= link_to "New item", new_product_path %>
 <% end %>

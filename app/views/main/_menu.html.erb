@@ -11,10 +11,10 @@
     </div>
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <li>
+        <li <%= put_active_class('stores').html_safe %> >
           <%= link_to "Магазини", stores_path %>
         </li>
-        <li class="active">
+        <li <%= put_active_class('products').html_safe %> >
           <%= link_to "Продукція", products_path  %>
         </li>
         <li class="dropdown">
@@ -29,10 +29,10 @@
           <a href="#">Customize</a>
         </li>
       </ul>
-    <div class="login col-xs-3 col-xs-offset-9 login_form">
+    <div class="login col-xs-4 col-xs-offset-8 login_form">
       <% if user_signed_in? %> 
-        <span> Вітаємо,<%= current_user.email %></span>
-        <%= link_to 'Вийти', destroy_user_session_path, :method =>  :delete %>
+        <span> Вітаємо, <span><%= current_user.email %></span></span>
+        <%= link_to ' Вийти', destroy_user_session_path, :method =>  :delete %>
         <% else %> 
         <%= link_to 'Увійти', new_user_session_path %>  
       /

@@ -1,30 +1,42 @@
-<div class="container">
 
-  <div id="tagline">
-    <h1>
-      ~ купи
-      <span>in.ua</span>
-      ~
-    </h1>
-  </div>
+
   <!-- end of tagline section -->
-
   <div class="row">
-    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-xs-4 col-xs-offset-4 shop">
       <h1><%= @store.name %></h1>
-      <div id="store-logo"><p>Store Logo</p></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 shop">
+      
       <p id="description"><%= @store.description %></p>
       <h3>Our products</h3>
-      <div class="row products">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">Product 1</div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">Product 2</div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">Product 3</div>
+      <div class="row products" id="shop-prod-show">
+
+
+          <% @products.each do |item| %>
+            <div class="col-xs-3">
+              <div class="result-item">
+                <%= image_tag(item.image_url, class: 'img-circle') %>
+                <div class="searchpage-products">
+                  <h4><%= item.name %></h4>
+                  <span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
+                  <p><%= link_to "view", "/products/#{item.id}", class: "view-item" %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+      
       </div>
     </div>
 
-    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
       <div id="contacts"><h3>Contacts</h3></div>
       <div id="map"><p>Our Map</p></div>
+      <div class="for_bg_color">
+                <div class="bg_color"></div>
+              </div>
       <div id="contact-block">
         <p><strong>Adress: </strong><%= @store.adress %></p>
         <p><strong>Tel.: </strong><%= @store.telephone %></p>
@@ -41,4 +53,3 @@
 <%= link_to 'Edit', edit_store_path(@store) %> 
 <%= link_to 'Back', stores_path %>
 
-</div>
