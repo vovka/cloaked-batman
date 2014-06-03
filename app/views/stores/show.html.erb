@@ -2,18 +2,29 @@
 
   <!-- end of tagline section -->
   <div class="row">
-    <div class="col-xs-4 col-xs-offset-4 shop">
-      <h1><%= @store.name %></h1>
+    <div class="col-xs-12 shop">
+        <div class="store-name-bg">
+            <h1><%= @store.name %></h1>
+        </div>
+        <div class="slick-slider">
+            <div class="slick-slider">
+                
+            </div>
+        </div>  
     </div>
   </div>
   <div class="row">
     <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 shop">
       
-      <p id="description"><%= @store.description %></p>
-      <h3>Our products</h3>
-      <div class="row products" id="shop-prod-show">
+      <div id="description">
+      <h3>About Our store:</h3>
+      <p><%= @store.description %></p>
+      </div>
 
+      
+      <div class="products" id="product-list">
 
+            <h3>Our products</h3>
           <% @products.each do |item| %>
             <div class="col-xs-3">
               <div class="result-item">
@@ -21,7 +32,8 @@
                 <div class="searchpage-products">
                   <h4><%= item.name %></h4>
                   <span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
-                  <p><%= link_to "view", "/products/#{item.id}", class: "view-item" %></p>
+
+                  <p class="button-view"><%= link_to "view", "/products/#{item.id}", class: "btn btn-default btn-xs" %></p>
                 </div>
               </div>
             </div>
@@ -32,11 +44,16 @@
     </div>
 
     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-      <div id="contacts"><h3>Contacts</h3></div>
-      <div id="map"><p>Our Map</p></div>
-      <div class="for_bg_color">
-                <div class="bg_color"></div>
-              </div>
+      <div id="contacts">
+      <h3>Contacts</h3>
+      </div>
+      
+<!--       <div class="for_bg_color">
+            <div class="bg_color"></div>
+      </div> -->
+      <%= render :partial => 'accordion' %>
+
+
       <div id="contact-block">
         <p><strong>Adress: </strong><%= @store.adress %></p>
         <p><strong>Tel.: </strong><%= @store.telephone %></p>
@@ -50,6 +67,6 @@
 
 
 
-<%= link_to 'Edit', edit_store_path(@store) %> 
-<%= link_to 'Back', stores_path %>
+<%= link_to 'Edit', edit_store_path(@store), class: "btn btn-warning btn-xs" %> 
+<%= link_to 'Back', stores_path, class: "btn btn-danger btn-xs" %>
 

@@ -11,13 +11,13 @@
             <form class="form-horizontal" role="form">
               <div class="form-group">
                 <div class="col-sm-6 col-sm-offset-3">
-                  <input type="email" class="form-control" id="searchFor" placeholder="Шукайте, наприклад: кросовки Львів..">
+                  <input type="email" class="form-control" id="searchFor" placeholder="Search for i.e: shoes Lviv..">
                 </div>
               </div>
             </form>
             <div class="searching">
               <button class="search" >
-                шукати
+                Search
               </button>
             </div>
             <div class="col-xs-10 col-xs-offset-1">
@@ -34,7 +34,7 @@
   	<section id="search-result" class="col-md-12">
   		<div class="row">
 			<div class="col-xs-8 col-xs-offset-2">
-					<h2>Знайдено магазини:</h2>
+					<h2>Founded Stores:</h2>
 			</div>
 		</div>
     <div class="row">
@@ -45,7 +45,8 @@
                 <div class="searchpage-stores">
                   <h4><%= store.name %></h4>
                   <h5><%= store.adress %></h5>
-                  <p><%= link_to "view", "/stores/#{store.id}" %></p>
+                  <p><%= link_to "view", "/stores/#{store.id}", class: "btn btn-default btn-xs"  %></p>
+
                 </div>
               </div>
             </div>
@@ -53,10 +54,10 @@
         </div>
       </div>
   	</section>
-  	<section id="search-result" class="col-md-12">
+  	<section id="product-list" class="col-md-12">
   		<div class="row">
 			<div class="col-xs-8 col-xs-offset-2">
-					<h2>Знайдено продукції:</h2>
+					<h2>Founded products items:</h2>
 			</div>
   		</div>
   		<div class="row">
@@ -68,7 +69,7 @@
   							<div class="searchpage-products">
   								<h4><%= item.name %></h4>
   								<span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
-                  <p><%= link_to "view", "/products/#{item.id}", class: "view-item" %></p>
+                  <p class="button-view"><%= link_to "view", "/products/#{item.id}", class: "btn btn-default btn-xs" %></p>
   							</div>
   						</div>
   					</div>
@@ -76,4 +77,5 @@
   			</div>
   		</div>
   	</section>
+    <%= render :partial => 'main/testimonials' %>
 </div> <!--end of row-->

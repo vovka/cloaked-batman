@@ -3,9 +3,11 @@ body{
 	/*font-weight: 100 !important;*/
 	margin: 2em 0 10em;
 	background-image: url(geometry2.png);
+
 }
 body .container{
-	background-color: rgba(255, 255, 255, 0.4);
+	/*background-color: rgba(255, 255, 255, 0.4);*/
+
 }
 .left{
 	float: left;
@@ -161,7 +163,7 @@ div.menu-main div {
 	margin-bottom: 3.5em;
 	/*margin-top: 1em*/
 }
-#search-result h2{
+#search-result h2, #product-list h2, #testimonials-row h2{
 	text-align: center;
 	margin: 2em 0 1em;
 	color: #e67e22;
@@ -171,14 +173,15 @@ div.menu-main div {
 #search-result .result{
 	padding: 2.5em 0 1em;
 }
-#search-result img{
+
+#product-list img{
 	padding: 3px;
 	border: 1px solid #bdc3c7;
 	transition: 0.2s;
 	width: 100%;
 	height: auto;
 }
-#search-result img:hover{
+#product-list img:hover{
 	border: 1px solid #e67e22;
 	-webkit-transform: scale(1.18);
 	-moz-transform: scale(1.18);
@@ -226,4 +229,22 @@ td{
 	text-align: right;
 	color: #2980b9;
 	font-style: italic;
+}
+
+.footer{
+  margin-top: 5%;
+  height: 70px !important;
+  background-color: #2980b9 !important;
+  border-radius: 0 !important;
+  bottom: 0;
+  width: 100%;
+}
+.footer h2{
+	font-size: 2.1em;
+	line-height: 30px;
+	font-weight: bold;
+  text-align: center;
+  padding-top: 15px;
+  font-weight: 100;
+  color: #fff;
 }
