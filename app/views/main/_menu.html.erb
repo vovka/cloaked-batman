@@ -12,12 +12,12 @@
     <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         <li <%= put_active_class('stores').html_safe %> >
-          <%= link_to "Магазини", stores_path %>
+          <%= link_to "Stores", stores_path %>
         </li>
         <li <%= put_active_class('products').html_safe %> >
-          <%= link_to "Продукція", products_path  %>
+          <%= link_to "Products", products_path  %>
         </li>
-        <li class="dropdown">
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <li><a href="#">Action</a></li>
@@ -27,16 +27,16 @@
         </li>
         <li >
           <a href="#">Customize</a>
-        </li>
+        </li> -->
       </ul>
     <div class="login col-xs-4 col-xs-offset-8 login_form">
       <% if user_signed_in? %> 
         <span> Вітаємо, <span><%= current_user.email %></span></span>
-        <%= link_to ' Вийти', destroy_user_session_path, :method =>  :delete %>
+        <%= link_to 'Exit', destroy_user_session_path, :method =>  :delete %>
         <% else %> 
-        <%= link_to 'Увійти', new_user_session_path %>  
+        <%= link_to 'Sign in', new_user_session_path %>  
       /
-        <%= link_to 'Реєстрація', new_user_registration_path %> 
+        <%= link_to 'Sign up', new_user_registration_path %> 
       <% end %>  
     </div>
     </nav>
