@@ -31,7 +31,7 @@
       </ul>
     <div class="login col-xs-4 col-xs-offset-8 login_form">
       <% if user_signed_in? %> 
-        <span> Вітаємо, <span><%= current_user.email %></span></span>
+        <span> Hello, <span><%= current_user.email %></span></span>
         <%= link_to 'Exit', destroy_user_session_path, :method =>  :delete %>
         <% else %> 
         <%= link_to 'Sign in', new_user_session_path %>  

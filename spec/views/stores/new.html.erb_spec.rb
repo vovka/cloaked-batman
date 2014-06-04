@@ -18,7 +18,7 @@ describe "stores/new" do
 
     assert_select "form[action=?][method=?]", stores_path, "post" do
       assert_select "input#store_name[name=?]", "store[name]"
-      assert_select "input#store_description[name=?]", "store[description]"
+      assert_select "textarea#store_description[name=?]", "store[description]"
       assert_select "input#store_adress[name=?]", "store[adress]"
       assert_select "input#store_telephone[name=?]", "store[telephone]"
       assert_select "input#store_mail[name=?]", "store[mail]"

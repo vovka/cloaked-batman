@@ -2,14 +2,14 @@
 <h2>Увійти</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div><%= f.label :email, 'ел. пошта' %><br />
+  <div><%= f.label :email, 'Email' %><br />
   <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.label "Пароль" %><br />
+  <div><%= f.label "Password" %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label "Запам’ятати мене" %></div>
+    <div><%= f.check_box :remember_me %> <%= f.label "remember me" %></div>
   <% end -%>
 
   <div><%= f.submit "Sign in" %></div>
