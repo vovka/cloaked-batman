@@ -17,7 +17,6 @@ var mapOptions = {
   zoom: mapZoom,
   maxZoom: mapZoomMax,
   minZoom: mapZoomMin,
-  // disableDefaultUI: true,
   panControl: false, 
   zoomControl: true,
   zoomControlOptions: {
@@ -31,7 +30,6 @@ var mapOptions = {
   scaleControl: false,
   streetViewControl: false,
   overviewMapControl: false,
-  // mapTypeId: google.maps.MapTypeId.ROADMAP
 };
 var polyOptions = {
   strokeWeight: 0,
@@ -123,7 +121,6 @@ var styled_festival_zoomed = new google.maps.StyledMapType(style_festival_zoomed
 
 window.onload = function(){
   
-    // console.info(infoWindows);
    document.getElementById('map_image').addEventListener('change', function(evt){
     var pattern = /\.(jpe?g|png|ico)$/gi;
     if(evt.target.value.search(pattern) != -1)
@@ -148,7 +145,6 @@ window.onload = function(){
   document.getElementById('fileupload').addEventListener('submit', function(evt){
     var encodeString, path, boundsObj, sw, ne, shapeToObj, shapeJson, req, inputElement;
     var rectMassCoordinates = new Array();
-    // evt.preventDefault();
     if(selectedShape && selectedShape.type != google.maps.drawing.OverlayType.MARKER){
       switch(selectedShape.type){
         case "polygon":
@@ -157,8 +153,6 @@ window.onload = function(){
           break;
         case "rectangle":
           boundsObj = selectedShape.getBounds();
-          // console.log(boundsObj);
-          // centerPosition = boundsObj.getCenter();
           sw = boundsObj.getSouthWest();
           ne = boundsObj.getNorthEast();
           rectMassCoordinates.push(sw);
@@ -169,9 +163,6 @@ window.onload = function(){
       shapeToObj = new ShapeToObj();
       shapeToObj.shapeType = selectedShape.type;
       shapeToObj.shapeCoord = encodeString;
-      // shapeToObj.shapeCentre = centerPosition;
-      // console.info(centerPosition);
-      // return;
 
       $('#fileupload').fileupload({
         autoUpload: false,
@@ -223,13 +214,11 @@ window.onload = function(){
           this.infoWindow.open(map, el);
         });
       });
-      // console.info(allMarkers);
     }
   }
   request.open("GET", '/map/index.json', true);
   request.setRequestHeader("Content-Type", "text/javascript");
   request.send(null);
-
 
   toggleDrawingControl = document.getElementById('toggleDrawingControl');
   toggleDrawingControl.addEventListener('click', function(){
@@ -246,7 +235,6 @@ window.onload = function(){
   }, false);
 
   map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
 
   map.mapTypes.set('map_styles_festival', styled_festival);
   map.mapTypes.set('map_styles_festival_zoomed', styled_festival_zoomed);
@@ -348,8 +336,6 @@ function addMarkers(){
       switch(el.shape_type){
         case 'polygon':
           coordinate = decodeString[0];
-          // console.info(coordinate);
-          // return;
         break;
         case 'rectangle':
           rectBounds = new google.maps.LatLngBounds(decodeString[0], decodeString[1]);
@@ -406,8 +392,6 @@ function loadMapMarkers (){
       ,opacity: 0.8
       ,width: "330px"
      }
-    // ,closeBoxMargin: "10px 2px 2px 2px"
-    // ,closeBoxURL: "https://www.thalys.com/img/destinations/close.png"
     ,infoBoxClearance: new google.maps.Size(1, 1)
     ,isHidden: false
     ,pane: "floatPane"
