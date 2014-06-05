@@ -28,6 +28,10 @@ _3. Tests pass.
 
 > Run ALL tests before push. 
 
+_4. Your branch contains only one feature. 
+
+> One feature - one branch - one pull request
+
 ### After push check:
 _1. Your branch is green. 
 
