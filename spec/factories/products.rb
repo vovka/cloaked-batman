@@ -3,5 +3,6 @@ FactoryGirl.define do
     name "Mouse SteelSeries"
     price 340
     description "Some product description is here"
+    store
   end
 end
