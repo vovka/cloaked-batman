@@ -16,7 +16,7 @@ describe "stores/edit" do
   it "renders the edit store form" do
     render
 
-    assert_select "form[action=?][method=?]", stores_path(@store), "post" do
+    assert_select "form[action=?][method=?]", store_path(@store), "post" do
       assert_select "input#store_name[name=?]", "store[name]"
       assert_select "textarea#store_description[name=?]", "store[description]"
       assert_select "input#store_adress[name=?]", "store[adress]"
