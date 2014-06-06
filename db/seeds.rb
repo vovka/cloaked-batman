@@ -28,3 +28,17 @@ Store.create(name: "Auchen", description: "Lorem ipsum dolor sit amet, consectet
 Store.create(name: "Silpo", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa enim.Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.", adress: "Lviv Stryiska 189" , telephone: "032 298 87 52", mail: "silpo@info.ua", contact_person: "Serger Zverjev", map_id: "2")
 
 Store.create(name: "Reebok", description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa enim.Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.", adress: "Lviv Rynok Square 22" , telephone: "032 2628 25 52", mail: "Reebok@test.ua", contact_person: "El Kravchuk", map_id: "9")
+
+#Shapes
+Shape.create(shape_type: "polygon", coordinates: "chslH{rpcD?eDd@yAXdF", description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, ipsum aspernatur officia suscipit rem consectetur.")
+Shape.create(shape_type: "rectangle", coordinates: "_eslHu}ocDsCsH", description: "Some shape description")
+Shape.create(shape_type: "rectangle", coordinates: "q|rlHuhpcDgEoF", description: "This is polygon and some one else...")
+
+#Products
+Product.create(name: "Razer Abyssus Gaming Mouse", price: 434.0,side_description: "Мышь Razer Abyssus предназначена для геймеров, кот...",description: "Мышь Razer Abyssus предназначена для геймеров", image: "razer-abyssus-03.jpg")
+Product.create(name: "Razer Kraken Pro", price: 1078.0,side_description: "Kraken Pro обеспечивает сочный и насыщенный звук",description: "Kraken Pro обеспечивает сочный и насыщенный звук в", image: "razerkrakenpro01.jpg")
+
+#Stores
+Store.create(name: "Orlando Shop", description: "Supermarket Orlando Shop", adress: "Lviv, Paternaka,5", telephone: "+380979379992", mail: "mail@mail.com", contact_person: "Oleksiy Pastukhov", map_id: 1)
+Store.create(name: "Bruklin Shop", description: "Supermarket Bruklin Shop", adress: "Lviv, Fedkovycha,20", telephone: "+380979379992", mail: "mail@mail.com", contact_person: "Taras Shyika", map_id: 2)
+Store.create(name: "Texas Shop", description: "Supermarket Texas Shop", adress: "Lviv, V.Velykogo,63", telephone: "+380979379992", mail: "mail@mail.com", contact_person: "Severyn Rybchynsky", map_id: 3)

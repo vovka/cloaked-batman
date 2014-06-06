@@ -1,10 +1,36 @@
 <h1>Map#index</h1>
 <p>Find me in app/views/map/index.html.erb</p>
 <div>
-  <div id="map"></div>
-  <span id="toggleDrawingControl" class="btn btn-default">On/Off drawing mod</span>
-  <span id="deleteShape" class="btn btn-default">Delete</span>
-  <span id="saveShape" class="btn btn-default">Save</span>
-  <span id="coordinatesShape" class="btn btn-default">Coords</span>
+  <div id="panel">
+    <button id="apply-overlay" class="btn btn-info">Apply overlay</button>
+    <button id="hide-overlay" class="btn btn-warning">Hide overlay</button>
+  </div>
+  <div id="map" style="width:800px; height:400px;"></div>
+  <span id="toggleDrawingControl" class="btn btn-primary">On/Off drawing mod</span>
+  <span id="deleteShape" class="btn btn-danger">Delete</span>
+  <a href="#myModal" id="modal-open" data-toggle="modal" class="btn btn-default">modal open</a>
+
+  <!--Modal -->
+  <div class="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Modal header</h2>
+        </div>
+        <div class="modal-body">
+          <span id="messages"></span>
+          <%= bootstrap_form_for :map, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10", :url => {:action => 'create_shape_upload'}, :html => {:multipart => true, :id => "fileupload" } do |f| %>
+              <%= f.file_field :image %>
+              <%= f.text_area :description, placeholder: "Leave a description here..." %>
+      </div>
+      <div class="modal-footer">
+          <%= f.submit :Send, id: "send-btn", class: "btn btn-success" %>
+          <% end %>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  </div>
+  
   <span id="debug"></span>
 </div>

@@ -20,4 +20,4 @@
 //= require bootstrap/dropdown
 //= require underscore
 //= require gmaps/google
-
+//= require jquery.fileupload

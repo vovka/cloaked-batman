@@ -16,6 +16,7 @@ gem 'underscore-rails'
 gem 'gmaps4rails'
 
 gem 'carrierwave'
+gem 'mini_magick'
 
 # Use 'devise' for authetication
 gem 'devise'
@@ -46,10 +47,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl_rails'
 end
+
+gem 'jquery.fileupload-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
