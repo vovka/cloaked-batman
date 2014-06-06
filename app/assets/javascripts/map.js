@@ -119,7 +119,7 @@ var style_festival_zoomed = [
 var styled_festival = new google.maps.StyledMapType(style_festival, {name: "Festival style"});
 var styled_festival_zoomed = new google.maps.StyledMapType(style_festival_zoomed, {name: "Festival style zoomed"});
 
-window.onload = function(){
+$(document).on('ready page:load', function () {
   
    document.getElementById('map_image').addEventListener('change', function(evt){
     var pattern = /\.(jpe?g|png|ico)$/gi;
@@ -190,12 +190,10 @@ window.onload = function(){
     if (request.readyState != 4) return;
     if (request.status == 200){
       objs = JSON.parse(request.responseText);
-      // console.log(objs);
       if (objs.length < 1) return;
       for(var i = 0; i < objs.length; i++)
         allShapesObjects.push(objs[i]);
       addMarkers();
-      // console.info(objs);
       for(var i = 0; i < objs.length; i++){
         var marker = new google.maps.Marker({
           position: allMarkersCoordinat[i],
@@ -316,10 +314,9 @@ window.onload = function(){
   google.maps.event.addDomListener(document.getElementById('apply-overlay'), 'click', applyOverlay);
   google.maps.event.addDomListener(document.getElementById('hide-overlay'), 'click', hideOverlay);
 
-};
+});
 
 
-//This obj will be send
 function ShapeToObj(){
   this.shapeType = '';
   this.shapeCoord = '';
@@ -565,7 +562,7 @@ function hideOverlay() {
   for(var i = 0; i < allMarkers.length; i++)
     allMarkers[i].setMap(map);
 }
-//Shape methods
+
 function deleteSelectedShape(){
   if (selectedShape) {
     if(window.confirm("Are you shure?")){
