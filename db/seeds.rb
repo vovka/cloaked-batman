@@ -39,6 +39,6 @@ Product.create(name: "Razer Abyssus Gaming Mouse", price: 434.0,side_description
 Product.create(name: "Razer Kraken Pro", price: 1078.0,side_description: "Kraken Pro обеспечивает сочный и насыщенный звук",description: "Kraken Pro обеспечивает сочный и насыщенный звук в", image: "razerkrakenpro01.jpg")
 
 #Stores
-Store.create(name: "Orlando Shop", description: "Supermarket Orlando Shop", adress: "Lviv, Paternaka,5", telephone: "+380979379992", mail: "mail@mail.com", contact_person: "Oleksiy Pastukhov", map_id: 1)
+Store.create(name: "O`1rlando Shop", description: "Supermarket Orlando Shop", adress: "Lviv, Paternaka,5", telephone: "+380979379992", mail: "mail@mail.com", contact_person: "Oleksiy Pastukhov", map_id: 1)
 Store.create(name: "Bruklin Shop", description: "Supermarket Bruklin Shop", adress: "Lviv, Fedkovycha,20", telephone: "+380979379992", mail: "mail@mail.com", contact_person: "Taras Shyika", map_id: 2)
 Store.create(name: "Texas Shop", description: "Supermarket Texas Shop", adress: "Lviv, V.Velykogo,63", telephone: "+380979379992", mail: "mail@mail.com", contact_person: "Severyn Rybchynsky", map_id: 3)
