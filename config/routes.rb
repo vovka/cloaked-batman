@@ -2,7 +2,7 @@ CloakedBatman::Application.routes.draw do
   root to: "main#index"
 
   devise_for :users
-  get 'persons/profile'
+  get 'users/profile'
 
   get 'map/index' => 'map#index'
   post 'map/create_shape' => 'map#create_shape'
