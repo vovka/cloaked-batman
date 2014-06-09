@@ -30,7 +30,7 @@
   <div class="row">
     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
       <h1><%= @store.name %></h1>
-      <div id="store-logo"><p>Store Logo</p></div>
+      <div id="store-logo"><%= image_tag @store.logo_image_url.to_s %></div>
       <p id="description"><%= @store.description %></p>
       <h3>Our products</h3>
       <div class="row products">
