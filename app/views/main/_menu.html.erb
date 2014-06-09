@@ -17,43 +17,17 @@
         <li <%= put_active_class('products').html_safe %> >
           <%= link_to "Products", products_path  %>
         </li>
-        <!-- <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li >
-          <a href="#">Customize</a>
-        </li> -->
       </ul>
     <div class="login col-xs-4 col-xs-offset-8 login_form">
-      <% if user_signed_in? %> 
+      <% if user_signed_in? %>
         <span> Hello, <span><%= current_user.email %></span></span>
         <%= link_to 'Exit', destroy_user_session_path, :method =>  :delete %>
-        <% else %> 
-        <%= link_to 'Sign in', new_user_session_path %>  
+        <% else %>
+        <%= link_to 'Sign in', new_user_session_path %>
       /
-        <%= link_to 'Sign up', new_user_registration_path %> 
-      <% end %>  
+        <%= link_to 'Sign up', new_user_registration_path %>
+      <% end %>
     </div>
     </nav>
   </div>
 </header>
-
-
-<!-- <ul id="nav_fixed">
-      <li class="inform">
-        <a href="#">Інформація</a>
-        <%= link_to "Головна", root_path %>
-        <a href="#">Купівля</a>
-        <a href="#">Про нас</a>
-        <a href="#">Вакансії</a>
-      </li>
-      <li class="link">
-        <a href>some other info</a>
-       
-    </li>
-</ul> -->

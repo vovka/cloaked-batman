@@ -5,15 +5,14 @@ CloakedBatman::Application.routes.draw do
   get 'persons/profile'
 
   get 'map/index' => 'map#index'
-  post 'map/create_shape' => 'map#create_shape'
   post 'map/create_shape_upload' => 'map#create_shape_upload'
 
-  resources :stores
+  resources :stores do
+    resources :products
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :products
-  resources :stores
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -51,7 +50,7 @@ CloakedBatman::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
