@@ -14,9 +14,6 @@
         <li <%= put_active_class('stores').html_safe %> >
           <%= link_to "Stores", stores_path %>
         </li>
-        <li <%= put_active_class('products').html_safe %> >
-          <%= link_to "Products", products_path  %>
-        </li>
       </ul>
     <div class="login col-xs-4 col-xs-offset-8 login_form">
       <% if user_signed_in? %>
