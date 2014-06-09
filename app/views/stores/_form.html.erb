@@ -17,7 +17,11 @@
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description, :cols => "70", :rows => "10" %>
+    <%= f.text_field :description %>
+  </div>
+    <div class="field">
+    <%= f.label :logo_image %><br>
+    <%= f.file_field :logo_image %>
   </div>
   <div class="field">
     <%= f.label :adress %><br>
