@@ -16,3 +16,4 @@
 /tmp
 /config/*.yml
 !/config/database.travis.yml
+.rake_tasks~
