@@ -2,6 +2,12 @@ body{
 	/*font-family: Roboto, arial, sans-serif;*/
 	/*font-weight: 100 !important;*/
 	margin: 2em 0 10em;
+	background-image: url(geometry2.png);
+
+}
+body .container{
+	/*background-color: rgba(255, 255, 255, 0.4);*/
+
 }
 .left{
 	float: left;
@@ -74,7 +80,7 @@ a{
 /* end of header styling */
 /* -------------------------------- tagline section styling -------------------------- */
 #tagline{
-	margin: 8em 0 4em; 
+	margin: 0% 0 2%; 
 }
 #tagline h1{
 	text-transform: uppercase;
@@ -84,6 +90,15 @@ a{
 	font-weight: 400 !important;
 	text-align: center;
 	transition: 0.9s;
+	margin: 0.1em 0 0.67em !important;
+}
+#tagline #searchFor{
+	font-size: 20px;
+  height: 48px;
+  color: #3498db;
+}
+.logo{
+	text-align: center;
 }
 #tagline > h1:hover{
 	/*color: #f1c40f;*/
@@ -101,15 +116,6 @@ a{
 #search{
 	position: relative;
 	height: auto;
-}
-.nav-tabs.nav-justified li.active a{
-	color: #e67e22;
-	font-weight: 400;
-}
-
-.nav-tabs.nav-justified > li > a{
-	font-size: 1.5em;
-	color: #bdc3c7;
 }
 
 .searching{
@@ -157,9 +163,9 @@ div.menu-main div {
 	margin-bottom: 3.5em;
 	/*margin-top: 1em*/
 }
-#search-result h2{
+#search-result h2, #product-list h2, #testimonials-row h2{
 	text-align: center;
-	margin: 1em 0 1em;
+	margin: 2em 0 1em;
 	color: #e67e22;
 	font-weight: 100;
 	font-size: 3em;
@@ -167,14 +173,15 @@ div.menu-main div {
 #search-result .result{
 	padding: 2.5em 0 1em;
 }
-#search-result img{
+
+#product-list img{
 	padding: 3px;
 	border: 1px solid #bdc3c7;
 	transition: 0.2s;
 	width: 100%;
 	height: auto;
 }
-#search-result img:hover{
+#product-list img:hover{
 	border: 1px solid #e67e22;
 	-webkit-transform: scale(1.18);
 	-moz-transform: scale(1.18);
@@ -191,15 +198,7 @@ div.menu-main div {
 	z-index: 999999;
 	padding-top: 10px;
 }
-.wrapper{
-	/*width: 80%;
-	padding: 3%;*/
-	margin: 0 auto;
-	background-color: #fff;
-}
-/*body{
-	background-color: #ddd;
-}*/
+
 td{
 	padding: 5px;
 	border: 1px solid #ddd; 
@@ -218,7 +217,34 @@ td{
 	/*border: 1px solid #ddd;*/
 	border-radius: 50%; 
 }
+.searchpage-stores{
+	border-left: 1px solid #2980b9;
+	padding-left: 15px;	
+}
 .searchpage-products{
 	border-left: 1px solid #2ecc71;
 	padding-left: 15px;
+}
+.result-item .view-item{
+	text-align: right;
+	color: #2980b9;
+	font-style: italic;
+}
+
+.footer{
+  margin-top: 5%;
+  height: 70px !important;
+  background-color: #2980b9 !important;
+  border-radius: 0 !important;
+  bottom: 0;
+  width: 100%;
+}
+.footer h2{
+	font-size: 2.1em;
+	line-height: 30px;
+	font-weight: bold;
+  text-align: center;
+  padding-top: 15px;
+  font-weight: 100;
+  color: #fff;
 }

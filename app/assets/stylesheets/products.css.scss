@@ -1,110 +1,8 @@
-body{
-    min-height: 1300px;
+.item-title h1{
+  color: #d35400;
+  margin: 30px 0;
+  margin-left: 50px;
 }
-header{
-  height: 100px;
-  background: url();
-  background-repeat: no-repeat;
-  background-position: 10px 20px;
-  /*outline: 1px solid red;*/
-}
-.navbar{
-  margin-bottom: 0;
-}
-
-/********** Main menu**********/
-
-#nav_fixed {
-    list-style:none;
-    position: fixed;
-    top: 120px;
-    left: 0;
-    opacity:.5;
-    padding:0;
-    z-index: 2;
-    width:50px;
-    text-transform: uppercase;
-    font-weight: bold;
-    
-    -moz-transition:opacity .3s ease-in-out;
-    -webkit-transition:opacity .3s ease-in-out;
-    -o-transition:opacity .3s ease-in-out;
-    transition:opacity .3s ease-in-out;
-}
-
-#nav_fixed:hover {
-    opacity:1;
-}
-
-#nav_fixed li {
-    height:50px;
-    overflow:hidden;
-    width:50px;
-    
-    -moz-transition:width .2s ease-in-out, height .2s ease-in-out .2s;
-    -webkit-transition:width .2s ease-in-out, height .2s ease-in-out .2s;
-    -o-transition:width .2s ease-in-out, height .2s ease-in-out .2s;
-    transition:width .2s ease-in-out, height .2s ease-in-out .2s;
-}
-
-#nav_fixed li:hover {
-    height:175px;
-    width:200px;
-}
-
-#nav_fixed li a {
-    background:#DCDCDC;
-    color:#fff;
-    cursor:pointer;
-    display:block;
-    height:40px;
-    line-height:40px;
-    margin:1px;
-    padding-left:15px;
-    width:200px;
-    text-decoration:none;
-    
-    -moz-transition:background .2s ease-in-out;
-    -webkit-transition:background .2s ease-in-out;
-    -o-transition:background .2s ease-in-out;
-    transition:background .2s ease-in-out;
-}
-
-#nav_fixed li a:hover {
-    background:#32658C;
-}
-
-#nav_fixed li a:first-child {
-    font-size:1.1em;
-    height:50px;
-    line-height:50px;
-    position:relative;
-    text-indent:36px;
-}
-
-#nav_fixed li a:first-child::before {
-    content:'';
-    display:block;
-    height:32px;
-    left:9px;
-    position:absolute;
-    top:9px;
-    width:32px;
-}
-
-.inform a:first-child::before {
-    background:url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/help.png?itok=LLCXh8Cx) center no-repeat;
-}
-.link a:first-child::before {
-    background:url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/info.png?itok=cZOI2e9i) center no-repeat;
-}
-
-@media only screen and (max-width: 950px){
-  #nav_fixed{
-    display: none;
-  }
-}
-
 span.reg-bl{
   color: #444;
   font-weight: bold;
@@ -155,6 +53,11 @@ a.thumbnail{
     font-size: 2em;
     font-weight: bold;
     text-transform: uppercase;
+    color: #e74c3c;
+    padding: 15px 0;
+}
+.thumbnail .caption{
+  padding: 0;
 }
 a[href="#priceReduction"]{
   text-decoration: underline;
@@ -175,8 +78,7 @@ a[href="#priceReduction"]:hover{
   display: block;
   width: 120px;
   position: relative;
-  font-family: 'PT Sans';
-  margin: 5px 0;
+  margin: 15px 0;
   height: 40px;
 }
 .btn-buy::before{
@@ -191,11 +93,10 @@ a[href="#priceReduction"]:hover{
 }
 #myPopover{
   width: 120px;
-  height: 25px;
-  font-family: 'PT Sans';
+  height: 28px;
   display: block;
   text-align: center;
-  font-size: .7em;
+  font-size: 1em;
 }
 .nav-tabs {
   border-bottom: 1px solid #BF2A2A;
@@ -207,7 +108,11 @@ a[href="#priceReduction"]:hover{
   border-bottom: 1px solid transparent;
 }
 .breadcrumb{
-  background-color: #2C516E;
+  margin-top: 20px;
+  background-color: none;
+  border-bottom: 1px solid #2ecc71;
+  border-radius: 0px;
+  color: #34495e;
 }
 .breadcrumb a{
   color: #fff;
@@ -277,24 +182,7 @@ span.vertical-line{
 .modal-body > p{
   font-size: .8em;
 }
-.panel-heading{
-  /*outline: 1px solid red;*/
-  color: #fff;
-  height: 30px;
-  padding: 0 0 0 30px;
-  background-color: #2C516E;
-  border: 1px solid #2C516E;
-}
-.panel-heading h4.panel-title{
-  line-height: 30px;
-  font-size: 1.1em;
-  margin: 0;
-}
-.panel-body > h4{
-  margin: 0 0 5px 0;
-  font-weight: bold;
-  font-size: 1.1em;
-}
+
 #content_carousel{
       display: block;
         margin: 0 auto;
@@ -366,21 +254,14 @@ span.goods-price{
   color:#444444;
   font-size: 9px;
 }
-footer{
-  margin-top: 10px;
-  background: #2C516E;
-  height: 30px;
-  color: white;
-  font-weight: bold;
-  text-align: center;
-  line-height: 30px;
-  border-radius: 5px 5px 0 0;
-  font-size: .8em;
-}
+
 
 .editImage{
-  width: 300px;
-  height: 100px;
+  width: auto;
+  height: 300px;
   margin-left: 400px;
   margin-bottom: 30px;
+}
+.blockquote{
+  margin-top: 15px;
 }

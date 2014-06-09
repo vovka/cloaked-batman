@@ -1,3 +1,99 @@
 // Place all the styles related to the stores controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#shop-prod-show img{
+  padding: 3px;
+  border: 1px solid #bdc3c7;
+  transition: 0.2s;
+  width: 100%;
+  height: auto;
+}
+.store-name-bg {
+  position: relative;
+  /*background-color: #27AE60;*/
+  width: 100%;
+  z-index: 10;
+  border: 1px solid #27ae60;
+  margin: 20px 0;
+}
+
+.store-name-bg::after{
+  content: "";
+  background-image: url(subtle_dots_@2X.png);
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -5;
+}
+
+.shop h1{
+  font-size: 6em;
+  text-align: center;
+  color: #f39c12;
+}
+#description p{
+  padding-left: 2.5em;
+}
+#description h3{
+  border-left: 2px solid #d35400;
+  font-size: 2.5em;
+  line-height: 1.5em;
+  color: #d35400;
+  text-indent: 1em;
+}
+.products h3{
+  border-left: 2px solid #d35400;
+  font-size: 2.0em;
+  color: #d35400;
+  text-indent: 1em;
+  line-height: 2.0em;
+}
+#contacts h3{
+  border-left: 2px solid #d35400;
+  font-size: 2.0em;
+  color: #d35400;
+  text-indent: 1em;
+  line-height: 2.0em;
+}
+
+.button-view{
+  right: 15px;
+  bottom: 5px;
+  position: absolute;
+}
+
+.panel-heading{
+  /*outline: 1px solid red;*/
+  color: #fff;
+  height: 30px;
+  padding: 0 0 0 30px;
+  background-color: #2C516E;
+  border: 1px solid #2C516E;
+}
+.panel-heading h4.panel-title{
+  line-height: 30px;
+  font-size: 1.1em;
+  margin: 0;
+}
+.panel-body > h4{
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+#accordion .panel:nth-child(1) .panel-heading{
+  background-color: #f39c12;
+  border: none;
+}
+#accordion .panel:nth-child(2) .panel-heading{
+  background-color: #d35400;
+  border: none;
+}
+#accordion .panel:nth-child(3) .panel-heading{
+  background-color: #c0392b;
+  border: none;
+}
