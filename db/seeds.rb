@@ -34,4 +34,6 @@ Shape.create(shape_type: "polygon", coordinates: "chslH{rpcD?eDd@yAXdF", descrip
 Shape.create(shape_type: "rectangle", coordinates: "_eslHu}ocDsCsH", description: "Some shape description")
 Shape.create(shape_type: "rectangle", coordinates: "q|rlHuhpcDgEoF", description: "This is polygon and some one else...")
 
+#Users
+User.create(email: "admin@gmail.com", encrypted_password: "220466675e31b9d20c051d5e57974150")
 
