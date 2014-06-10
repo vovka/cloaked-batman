@@ -15,6 +15,12 @@ overflow: hidden;
 .searching input{
   display: block;
 }
+a:hover{
+    transition: 0.1s; 
+  -moz-transition: 0.1s; 
+  -o-transition: 0.1s; 
+  -webkit-transition: 0.1s;
+}
 .login a, .login{
   font-size: 110%;
   color: #95a5a6;
@@ -27,8 +33,7 @@ overflow: hidden;
   margin-top: -34px;
 }
 .login a:hover{
-  color: #e67e22;
-  
+  color: #e67e22 !important;
 }
 .login_form > span{
   font-size: 110%;

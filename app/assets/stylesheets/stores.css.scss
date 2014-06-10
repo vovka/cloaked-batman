@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.create_store-wrapper h1{
+  font-size: 3em;
+  color: #E67E22;
+}
+.create_store-wrapper label{
+  font-weight: 100;
+}
+.create_store-wrapper .actions{
+  margin: 15px 0;
+}
 
 #shop-prod-show img{
   padding: 3px;
