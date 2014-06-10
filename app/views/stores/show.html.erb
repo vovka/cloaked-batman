@@ -25,7 +25,7 @@
       <div class="products" id="product-list">
 
             <h3>Our products</h3>
-          <% @products.each do |item| %>
+          <% @store.products.each do |item| %>
             <div class="col-xs-3">
               <div class="result-item">
                 <%= image_tag(item.image_url, class: 'img-circle') %>
