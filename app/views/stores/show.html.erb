@@ -1,55 +1,48 @@
-
 <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 shop">
-        <div id="store-logo"><%= image_tag @store.logo_image_url.to_s %></div>
-        <div class="store-name-bg">
-          <h1><%= @store.name %></h1>
-        </div>
-        
-      </div>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 shop">
+    <div id="store-logo"><%= image_tag @store.logo_image_url.to_s, class: 'img-circle' %></div>
+    <div class="store-name-bg">
+      <h1><%= @store.name %></h1>
+    </div>
+  </div>
 </div>
-
 <div class="row">
   <div class="col-lg-12 ">
-    <div class="col-lg-8">
+    <div class="col-lg-8">.
       <div id="description">
         <h3>About Our store:</h3>
         <p><%= @store.description %></p>
       </div>
       <div class="products" id="product-list">
         <h3>Our products</h3>
-          <% @store.products.each do |item| %>
-            <div class="col-xs-3">
-              <div class="result-item">
-                <%= image_tag(item.image_url, class: 'img-circle') %>
-                <div class="searchpage-products">
-                  <h4><%= item.name %></h4>
-                  <span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
-
-                  <p class="button-view"><%= link_to "view", "#{item.id}/products/#{item.id}", class: "btn btn-default btn-xs" %></p>
-                </div>
-              </div>
+        <% @store.products.each do |item| %>
+        <div class="col-xs-3">
+          <div class="result-item">
+            <%= image_tag(item.image_url, class: 'img-circle') %>
+            <div class="searchpage-products">
+              <h4><%= item.name %></h4>
+              <span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
+              <p class="button-view"><%= link_to "view", "#{item.id}/products/#{item.id}", class: "btn btn-default btn-xs" %></p>
             </div>
-          <% end %>
-    </div><!-- product list -->
-    </div>
-
-
-
-
-  <div class="col-lg-4">
-    <%= render :partial => 'accordion' %>
-
-      <div id="contacts"><h3>Contacts</h3></div>
+          </div>
+        </div>
+        <% end %>
+        </div><!-- product list -->
+      </div>
+      <div class="col-lg-4">
+        <%= render :partial => 'accordion' %>
+        <div id="contacts"><h3>Contacts</h3></div>
         <div id="map"><p>Our Map</p></div>
         <div id="contact-block">
           <p><strong>Adress: </strong><%= @store.adress %></p>
           <p><strong>Tel.: </strong><%= @store.telephone %></p>
           <p><strong>Mail: </strong><%= @store.mail %></p>
           <p><strong>Contact person: </strong><%= @store.contact_person %></p>
-        </div><!-- contacts -->
-  </div>
-  <div class="clear"></div>
-  <%= link_to 'Back', stores_path %>
+          </div><!-- contacts -->
+        </div>
+        <div class="clear"></div>
+        <%= link_to 'Back', stores_path %>
+      </div>
     </div>
+  </div>
 </div>
