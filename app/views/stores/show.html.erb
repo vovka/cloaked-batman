@@ -1,32 +1,30 @@
-<div class="container">
 
-  <header id="header">
-    <div class="row">
-      <div class="sign-in-section right">
-        <ul>
-          <li>
-            <a href="#">Увійти</a>
-          </li>
-          <li>
-            <span>/</span>
-          </li>
-          <li>
-            <a href="#">Реєстрація</a>
-          </li>
-        </ul>
+  <div class="row">
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 shop">
+      
+      <div id="description">
+      <h3>About Our store:</h3>
+      <p><%= @store.description %></p>
       </div>
-    </div>
-  </header>
-  <!-- end of header section -->
-  <div id="tagline">
-    <h1>
-      ~ купи
-      <span>in.ua</span>
-      ~
-    </h1>
-  </div>
-  <!-- end of tagline section -->
 
+      
+      <div class="products" id="product-list">
+
+            <h3>Our products</h3>
+          <% @store.products.each do |item| %>
+            <div class="col-xs-3">
+              <div class="result-item">
+                <%= image_tag(item.image_url, class: 'img-circle') %>
+                <div class="searchpage-products">
+                  <h4><%= item.name %></h4>
+                  <span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
+
+                  <p class="button-view"><%= link_to "view", "#{item.id}/products/#{item.id}", class: "btn btn-default btn-xs" %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          
   <div class="row">
     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
       <h1><%= @store.name %></h1>

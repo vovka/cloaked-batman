@@ -36,4 +36,3 @@ Shape.create(shape_type: "rectangle", coordinates: "q|rlHuhpcDgEoF", description
 
 #Users
 User.create(email: "admin@gmail.com", encrypted_password: "220466675e31b9d20c051d5e57974150")
-
