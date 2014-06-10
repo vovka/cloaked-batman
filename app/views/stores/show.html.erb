@@ -1,16 +1,23 @@
 
-  <div class="row">
-    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 shop">
-      
-      <div id="description">
-      <h3>About Our store:</h3>
-      <p><%= @store.description %></p>
+<div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 shop">
+        <div id="store-logo"><%= image_tag @store.logo_image_url.to_s %></div>
+        <div class="store-name-bg">
+          <h1><%= @store.name %></h1>
+        </div>
+        
       </div>
+</div>
 
-      
+<div class="row">
+  <div class="col-lg-12 ">
+    <div class="col-lg-8">
+      <div id="description">
+        <h3>About Our store:</h3>
+        <p><%= @store.description %></p>
+      </div>
       <div class="products" id="product-list">
-
-            <h3>Our products</h3>
+        <h3>Our products</h3>
           <% @store.products.each do |item| %>
             <div class="col-xs-3">
               <div class="result-item">
@@ -24,30 +31,25 @@
               </div>
             </div>
           <% end %>
-          
-  <div class="row">
-    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-      <h1><%= @store.name %></h1>
-      <div id="store-logo"><%= image_tag @store.logo_image_url.to_s %></div>
-      <p id="description"><%= @store.description %></p>
-      <h3>Our products</h3>
-      <div class="row products">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">Product 1</div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">Product 2</div>
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">Product 3</div>
-      </div>
+    </div><!-- product list -->
     </div>
 
-    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+
+
+
+  <div class="col-lg-4">
+    <%= render :partial => 'accordion' %>
+
       <div id="contacts"><h3>Contacts</h3></div>
-      <div id="map"><p>Our Map</p></div>
-      <div id="contact-block">
-        <p><strong>Adress: </strong><%= @store.adress %></p>
-        <p><strong>Tel.: </strong><%= @store.telephone %></p>
-        <p><strong>Mail: </strong><%= @store.mail %></p>
-        <p><strong>Contact person: </strong><%= @store.contact_person %></p>
-      </div>
-    </div>
+        <div id="map"><p>Our Map</p></div>
+        <div id="contact-block">
+          <p><strong>Adress: </strong><%= @store.adress %></p>
+          <p><strong>Tel.: </strong><%= @store.telephone %></p>
+          <p><strong>Mail: </strong><%= @store.mail %></p>
+          <p><strong>Contact person: </strong><%= @store.contact_person %></p>
+        </div><!-- contacts -->
   </div>
+  <div class="clear"></div>
   <%= link_to 'Back', stores_path %>
+    </div>
 </div>
