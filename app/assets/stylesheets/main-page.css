@@ -78,6 +78,10 @@ a{
 /* end of sign-in-section styling */
 
 /* end of header styling */
+.navbar-inverse .navbar-brand:hover{
+	color: #e67e22 !important;
+}
+
 /* -------------------------------- tagline section styling -------------------------- */
 #tagline{
 	margin: 0% 0 2%; 

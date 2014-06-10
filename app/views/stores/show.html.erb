@@ -25,7 +25,35 @@
       ~
     </h1>
   </div>
+<<<<<<< HEAD
   <!-- end of tagline section -->
+=======
+  <div class="row">
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 shop">
+      
+      <div id="description">
+      <h3>About Our store:</h3>
+      <p><%= @store.description %></p>
+      </div>
+
+      
+      <div class="products" id="product-list">
+
+            <h3>Our products</h3>
+          <% @store.products.each do |item| %>
+            <div class="col-xs-3">
+              <div class="result-item">
+                <%= image_tag(item.image_url, class: 'img-circle') %>
+                <div class="searchpage-products">
+                  <h4><%= item.name %></h4>
+                  <span style="text-align: right; color: #e74c3c">$<%= item.price %></span>
+
+                  <p class="button-view"><%= link_to "view", "#{item.id}/products/#{item.id}", class: "btn btn-default btn-xs" %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+>>>>>>> link fixing
 
   <div class="row">
     <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
