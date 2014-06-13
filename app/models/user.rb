@@ -4,8 +4,4 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   ROLES = %w[registered owner admin] 
-
-  def is?(role)
-	ROLES.include?(role.to_s)
-  end
 end
