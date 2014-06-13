@@ -26,14 +26,28 @@
         <td><%= store.contact_person %></td>
         <td><%= store.map_id %></td>
         <td><%= link_to 'Show Store', store %></td>
-        <td><%= link_to 'Edit Store', edit_store_path(store) %></td>
-        <td><%= link_to 'Delete Store', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <% if can? :update, store %>
+          <td>
+          <%= link_to 'Edit Store', edit_store_path(store) %>
+          </td>
+        <% end %>
+        
+
+        
+        <% if can? :destroy, store %>
+          <td>
+          <%= link_to 'Delete Store', store, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        <% end %>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
 <br>
-
-<%= link_to 'Create Store', new_store_path %>
+<% if can? :create, @store %>
+  <%= link_to 'Create Store', new_store_path %>
+<% end %>
 </div>
