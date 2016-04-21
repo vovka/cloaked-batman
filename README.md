@@ -46,3 +46,7 @@ You can check it when create a PR: ![](https://gist.githubusercontent.com/vovka/
 * Or create new branch from fresh master and merge your branch into there. 
 * Or any other proper way. 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vovka/cloaked-batman/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
